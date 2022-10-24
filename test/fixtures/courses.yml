@@ -1,0 +1,49 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dgcr_id: 1
+  name: MyString
+  holes: 1
+  city: MyString
+  state: MyString
+  country: MyString
+  zipcode: MyString
+  reviews: 1
+  rating: 1.5
+  private: 1
+  paytoplay: 1
+  tee_1: MyString
+  tee_2: MyString
+  tee_3: MyString
+  tee_4: MyString
+  dgcr_url: MyString
+  rating_img: MyString
+  rating_img_small: MyString
+  photo_thumb: MyString
+  photo_medium: MyString
+  photo_hole: MyString
+  photo_cap: MyString
+
+two:
+  dgcr_id: 1
+  name: MyString
+  holes: 1
+  city: MyString
+  state: MyString
+  country: MyString
+  zipcode: MyString
+  reviews: 1
+  rating: 1.5
+  private: 1
+  paytoplay: 1
+  tee_1: MyString
+  tee_2: MyString
+  tee_3: MyString
+  tee_4: MyString
+  dgcr_url: MyString
+  rating_img: MyString
+  rating_img_small: MyString
+  photo_thumb: MyString
+  photo_medium: MyString
+  photo_hole: MyString
+  photo_cap: MyString

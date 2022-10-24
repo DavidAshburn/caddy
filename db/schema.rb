@@ -10,9 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_190003) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_24_210229) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coursekeys", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_coursekeys_on_course_id"
+    t.index ["user_id"], name: "index_coursekeys_on_user_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.integer "dgcr_id"
+    t.string "name"
+    t.integer "holes"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "zipcode"
+    t.integer "reviews"
+    t.float "rating"
+    t.integer "private"
+    t.integer "paytoplay"
+    t.string "tee_1"
+    t.string "tee_2"
+    t.string "tee_3"
+    t.string "tee_4"
+    t.string "dgcr_url"
+    t.string "rating_img"
+    t.string "rating_img_small"
+    t.string "photo_thumb"
+    t.string "photo_medium"
+    t.string "photo_hole"
+    t.string "photo_cap"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "disckeys", force: :cascade do |t|
     t.bigint "disc_id", null: false
@@ -45,6 +81,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_190003) do
     t.index ["user_id"], name: "index_discs_on_user_id"
   end
 
+  create_table "holes", force: :cascade do |t|
+    t.integer "number"
+    t.string "label"
+    t.integer "tee_1_len"
+    t.integer "tee_2_len"
+    t.integer "tee_3_len"
+    t.integer "tee_4_len"
+    t.integer "tee_1_par"
+    t.integer "tee_2_par"
+    t.integer "tee_3_par"
+    t.integer "tee_4_par"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_holes_on_course_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -57,6 +110,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_190003) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "coursekeys", "courses"
+  add_foreign_key "coursekeys", "users"
   add_foreign_key "disckeys", "discs"
   add_foreign_key "disckeys", "users"
 end

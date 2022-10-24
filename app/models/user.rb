@@ -6,5 +6,8 @@ class User < ApplicationRecord
 
   has_many :disckeys
   has_many :discs, :through => :disckeys
+
+  has_many :coursekeys
+  has_many :courses, :through => :coursekeys
   
 end

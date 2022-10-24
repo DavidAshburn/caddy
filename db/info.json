@@ -1,0 +1,316 @@
+
+'crseinfo'
+{
+	"course_id":"1",
+	"name":"Prompton State Park",
+	"holes":"18",
+	"city":"Honesdale",
+	"state":"PA",
+	"country":"United States",
+	"zipcode":"18456",
+	"reviews":"9",
+	"rating":"3.72",
+	"private":"0",
+	"paytoplay":"0",
+	"tee_1_clr":"FFFF00",
+	"tee_2_clr":"FF0000",
+	"tee_3_clr":"",
+	"tee_4_clr":"",
+	"dgcr_url":"https:\/\/www.dgcoursereview.com\/course.php?id=1",
+	"dgcr_mobile_url":"https:\/\/www.dgcoursereview.com\/mobile\/course.php?id=1",
+	"rating_img":"https:\/\/www.dgcoursereview.com\/images\/rating\/discs_3.5.png",
+	"rating_img_small":"https:\/\/www.dgcoursereview.com\/images\/rating\/discs_sm_3.5.png",
+	"course_photo_url_thumb":"https://www.dgcoursereview.com/course_pics/1/4a6d3c29_t.jpg",
+	"course_photo_medium":"https://www.dgcoursereview.com/course_pics/1/4a6d3c29_m.jpg",
+	"course_photo_hole":"4","course_photo_caption":"Hole #4 Tee"
+}
+
+'holeinfo'
+[
+	{
+		"course_id":"1",
+		"name":"Prompton State Park",
+		"city":"Honesdale",
+		"state":"PA",
+		"country":"United States",
+		"reviews":"9",
+		"rating":"3.72",
+		"tee_1_clr":"FFFF00",
+		"tee_2_clr":"FF0000",
+		"tee_3_clr":"",
+		"tee_4_clr":"",
+		"dgcr_url":"https:\/\/www.dgcoursereview.com\/course.php?id=1",
+		"dgcr_mobile_url":"https:\/\/www.dgcoursereview.com\/mobile\/course.php?id=1",
+		"rating_img":"https:\/\/www.dgcoursereview.com\/images\/rating\/discs_3.5.png",
+		"rating_img_small":"https:\/\/www.dgcoursereview.com\/images\/rating\/discs_sm_3.5.png"
+	},
+	{
+		"hole_num":"1",
+		"hole_lbl":"1",
+		"tee_1_len":"324",
+		"tee_2_len":"436",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"2",
+		"hole_lbl":"2",
+		"tee_1_len":"282",
+		"tee_2_len":"390",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"4",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"3",
+		"hole_lbl":"3",
+		"tee_1_len":"352",
+		"tee_2_len":"376",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"4",
+		"hole_lbl":"4",
+		"tee_1_len":"258",
+		"tee_2_len":"319",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"5",
+		"hole_lbl":"5",
+		"tee_1_len":"188",
+		"tee_2_len":"262",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"6",
+		"hole_lbl":"6",
+		"tee_1_len":"245",
+		"tee_2_len":"364",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"7",
+		"hole_lbl":"7",
+		"tee_1_len":"239",
+		"tee_2_len":"282",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"8",
+		"hole_lbl":"8",
+		"tee_1_len":"409",
+		"tee_2_len":"508",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"4",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"9",
+		"hole_lbl":"9",
+		"tee_1_len":"255",
+		"tee_2_len":"301",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"10",
+		"hole_lbl":"10",
+		"tee_1_len":"446",
+		"tee_2_len":"555",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"11",
+		"hole_lbl":"11",
+		"tee_1_len":"416",
+		"tee_2_len":"750",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"4",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"12",
+		"hole_lbl":"12",
+		"tee_1_len":"266",
+		"tee_2_len":"393",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"13",
+		"hole_lbl":"13",
+		"tee_1_len":"603",
+		"tee_2_len":"956",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"5",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"14",
+		"hole_lbl":"14",
+		"tee_1_len":"345",
+		"tee_2_len":"445",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"15",
+		"hole_lbl":"15",
+		"tee_1_len":"363",
+		"tee_2_len":"556",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"16",
+		"hole_lbl":"16",
+		"tee_1_len":"277",
+		"tee_2_len":"383",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"17",
+		"hole_lbl":"17",
+		"tee_1_len":"288",
+		"tee_2_len":"553",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"4",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	},
+	{
+		"hole_num":"18",
+		"hole_lbl":"18",
+		"tee_1_len":"307",
+		"tee_2_len":"372",
+		"tee_3_len":"0",
+		"tee_4_len":"0",
+		"tee_1_par":"3",
+		"tee_2_par":"3",
+		"tee_3_par":"0",
+		"tee_4_par":"0"
+	}
+]
+
+'crsephoto'
+[
+	{
+		"course_photo_url_thumb":"https://www.dgcoursereview.com/course_pics/1/4a6d3c29_t.jpg",
+		"course_photo_medium":"https://www.dgcoursereview.com/course_pics/1/4a6d3c29_m.jpg",
+		"course_photo_hole":"4",
+		"course_photo_caption":"Hole #4 Tee"
+	}
+]
+
+//search by bounding box
+'near_box'
+[
+	{
+		"course_id":"3",
+		"name":"Chili DGC",
+		"holes":"18",
+		"city":"Chili",
+		"state":"NY",
+		"country":"United States",
+		"zipcode":"14428",
+		"latitude":"43.077770",
+		"longitude":"-77.766098",
+		"reviews":"44",
+		"rating":"4.00",
+		"private":"0",
+		"paytoplay":"0",
+		"dgcr_url":"https:\/\/www.dgcoursereview.com\/course.php?id=3",
+		"dgcr_mobile_url":"https:\/\/www.dgcoursereview.com\/mobile\/course.php?id=3",
+		"rating_img":"https:\/\/www.dgcoursereview.com\/images\/rating\/discs_4.png",
+		"rating_img_small":"https:\/\/www.dgcoursereview.com\/images\/rating\/discs_sm_4.png"
+	}
+]
+
+//search by geo-point and radius
+'near_rad'
+["same as above"]
+
+//search by course name
+'findname'
+["same as above"]
+
+//search by location
+'findloc'
+["same as above"]
+
+//search by zip code
+'findzip'
+["same as above"]
+
+//Submit a score
+'lots of info to send, not part of my scope, this would make it a DGCR app'

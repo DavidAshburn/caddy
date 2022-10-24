@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :discs, :disckeys
+
+  #trim these down later
+  resources :discs, :courses, :disckeys, :coursekeys
   devise_for :users
   root 'home#index'
   get 'home/discbag'

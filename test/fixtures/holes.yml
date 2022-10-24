@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  label: MyString
+  tee_1_len: 1
+  tee_2_len: 1
+  tee_3_len: 1
+  tee_4_len: 1
+  tee_1_par: 1
+  tee_2_par: 1
+  tee_3_par: 1
+  tee_4_par: 1
+
+two:
+  number: 1
+  label: MyString
+  tee_1_len: 1
+  tee_2_len: 1
+  tee_3_len: 1
+  tee_4_len: 1
+  tee_1_par: 1
+  tee_2_par: 1
+  tee_3_par: 1
+  tee_4_par: 1
