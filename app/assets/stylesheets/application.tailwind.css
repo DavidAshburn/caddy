@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-yellow {
+    @apply transition-all py-2 px-4 min-w-fit text-center bg-gradient-to-t from-yellow-400 hover:from-yellow-500 via-amber-200 hover:via-amber-300 to-orange-100 hover:to-orange-200 rounded-full font-raleway font-bold text-gray-700 focus:text-white focus:border-2 focus:border-white shadow-[inset_0_-2px_4px_rgba(255,255,255,0.5)];
+  }
+
+  .btn-green {
+    @apply transition-all py-2 px-4 min-w-fit text-center bg-gradient-to-t from-emerald-300 hover:from-emerald-400 via-green-200 hover:via-green-300 to-lime-100 hover:to-lime-200 rounded-full font-raleway font-bold text-gray-700 focus:text-white focus:border-2 focus:border-white shadow-[inset_0_-2px_4px_rgba(220,220,255,0.2)];
+  }
+
+  .btn-blue {
+    @apply py-2 px-4 min-w-fit text-center bg-gradient-to-t from-sky-400 hover:from-sky-500 via-cyan-200 hover:via-cyan-300 to-teal-100 hover:to-teal-200 rounded-full font-raleway font-bold text-gray-700 focus:text-white focus:border-2 focus:border-white shadow-[inset_0_-2px_4px_rgba(220,220,255,0.2)];
+  }
+
+  .btn-grey {
+    @apply py-2 px-4 min-w-fit text-center bg-gradient-to-t from-stone-500 hover:from-stone-600 via-neutral-300 hover:via-neutral-400 to-zinc-200 hover:to-zinc-300 rounded-full font-raleway font-bold text-gray-700 focus:text-white focus:border-2 focus:border-white shadow-[inset_0_-2px_4px_rgba(220,220,255,0.2)];
+  }
+
+  .buck-navlink {
+    @apply flex font-lato font-bold text-sm no-underline hover:text-white mx-4 my-4;
+  }
+
+  .buck-navlink-hide {
+    @apply flex font-lato font-bold text-sm no-underline hover:text-white hidden sm:flex mx-[3vw] my-2;
+  }
+
+  .inset-shadow {
+    @apply shadow-[inset_0_-2px_4px_rgba(255,255,255,0.5)];
+  }
+
+  .glass-box {
+    @apply rounded-full bg-clip-padding backdrop-filter bg-gradient-to-b from-slate-100/20 to-slate-300/40 border-b border-l inset-shadow transition-all ease-in;
+  }
+
+  .glass-button {
+    @apply rounded-full bg-clip-padding backdrop-filter backdrop-blur-xl bg-gradient-to-b from-slate-400/20 to-zinc-600/20 rounded-full border-t border-l border-gray-200 inset-shadow;
+  }
+
+  .glass-blur {
+    @apply bg-clip-padding backdrop-filter backdrop-blur-xl bg-gradient-to-b from-slate-100/30 to-slate-300/50 inset-shadow transition-all ease-in;
+  }
+
+  .container-alert {
+    @apply flex flex-col justify-center w-[100vw] fixed bottom-10
+  }
+
+  .alert {
+    @apply bg-orange-300 text-slate-900 border border-slate-700 px-6 flex w-[80vw] rounded-tl-[3.2rem] rounded-tr-xl rounded-br-[3.2rem] rounded-bl-xl font-raleway p-4 justify-between items-center fixed bottom-4 left-10;
+  }
+
+  .notice {
+    @apply text-white border border-slate-100 px-6 flex w-[80vw] rounded-tl-[3.2rem] rounded-tr-xl rounded-br-[3.2rem] rounded-bl-xl font-raleway p-4 justify-between items-center fixed bottom-4 left-10;
+  }
+}
+
+@keyframes bg-animate {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+body {
+  animation: bg-animate 120s infinite;
+}
