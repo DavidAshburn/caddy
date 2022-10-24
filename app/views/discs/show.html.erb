@@ -1,0 +1,73 @@
+<div class="flex flex-col items-center w-full"> 
+  <div class="flex flex-row w-full justify-center">
+    <h2 class="font-bold sm:text-8xl text-4xl font-righteous text-zinc-800"><%= @disc.model %></h2>
+  </div>
+  <h3 class="font-bold sm:text-4xl text-2xl font-righteous text-zinc-800"><%= @disc.maker %></h3>
+
+  <div class="bg-clip-padding backdrop-filter bg-gradient-to-b from-slate-100 to-slate-300 border-t border-l border-gray-200 inset-shadow rounded-lg w-11/12 flex flex-col p-2 gap-1 items-center">
+    
+    <div class="flex w-11/12">
+      <div class="w-1/2 text-center">
+        Weight:&nbsp<%= @disc.weight %>
+      </div>
+      <div class="w-1/2 text-center">
+        Diameter:&nbsp<%= @disc.diameter %>
+      </div>
+    </div>
+    <div class="flex w-11/12">
+      <div class="w-1/2 text-center">
+        Height:&nbsp<%= @disc.height %>
+      </div>
+      <div class="w-1/2 text-center">
+        Rim&nbspDepth:&nbsp<%= @disc.depth %>
+      </div>
+    </div>
+    <div class="flex w-11/12">
+      <div class="w-1/2 text-center">
+        Inner&nbspDiameter:&nbsp<%= @disc.rimdiameter %>
+      </div>
+      <div class="w-1/2 text-center">
+        Rim&nbspThickness:&nbsp<%= @disc.rimthickness %>
+      </div>
+    </div>
+    <div class="flex w-11/12">
+      <div class="w-1/2 text-center">
+        Rim&nbspRatio:&nbsp<%= @disc.rimratio %>
+      </div>
+      <div class="w-1/2 text-center">
+        Rim&nbspConfiguration:&nbsp<%= @disc.rimconfig %>
+      </div>
+    </div>
+    <div class="flex w-11/12 justify-center">
+      <div class="w-1/2 text-center">
+        Flexibility:&nbsp<%= @disc.flex %>
+      </div>
+    </div>
+    <div class="flex w-11/12">
+      <div class="w-1/2 text-center">
+        Speed:&nbsp<%= @disc.speed %>
+      </div>
+      <div class="w-1/2 text-center">
+        Glide:&nbsp<%= @disc.glide %>
+      </div>
+    </div>
+    <div class="flex w-11/12">
+      <div class="w-1/2 text-center">
+        Turn:&nbsp<%= @disc.turn %>
+      </div>
+      <div class="w-1/2 text-center">
+        Fade:&nbsp<%= @disc.fade %>
+      </div>
+    </div>
+
+  </div>
+
+<div class="glass-box w-full p-4 my-2 w-11/12">
+  <% if @disc.user_id != 0 %>
+    <%= link_to 'Edit this disc', edit_disc_path(@disc), class: "btn-yellow" %>
+  <% end %>
+
+  <%= link_to 'Discbag', home_discbag_path, class: "btn-blue" %>
+</div>
+
+</div>

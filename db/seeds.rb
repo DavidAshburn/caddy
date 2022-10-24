@@ -17,7 +17,7 @@ all_discs.each do |disc|
 		rimthickness: disc['RimThickness'],
 		rimratio: disc['RimRatio'],
 		rimconfig: disc['RimConfig'],
-		flexibility: disc['Flexibility']
+		flex: disc['Flexibility']
 		)
 end
 

@@ -1,0 +1,22 @@
+<turbo-frame id="discadd">
+  <%= form_with(model: disc, class: "contents") do |form| %>
+    <% if disc.errors.any? %>
+      <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+        <h2><%= pluralize(disc.errors.count, "error") %> prohibited this disc from being saved:</h2>
+
+        <ul>
+          <% disc.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="flex w-full justify-center gap-20">
+      <%= form.text_field :maker, placeholder: "Maker", class: "rounded-md font-righteous text-lg" %>
+      <%= form.text_field :model, placeholder: "Model", class: "rounded-md font-righteous text-lg" %>
+      <%= form.hidden_field :user_id, value:current_user.id %>
+      <%= form.submit "Add Disc", class: "btn-green" %>
+    </div>
+  <% end %>
+</turbo-frame>

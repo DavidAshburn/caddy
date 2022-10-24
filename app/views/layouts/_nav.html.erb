@@ -1,6 +1,6 @@
 <nav data-controller="navbar" class="sticky h-12 w-[95%] flex justify-between items-center gap-8 pr-8 bg-slate-100 mt-4 inset-shadow rounded-full font-righteous text-bold text-sky-700 no-underline text-lg">
   <div class="flex justify-start items-center">
-    <%# link_to image_tag('basket.jpg', class:"min-w-[3rem] w-12 h-12 rounded-full"), root_path %>
+    <%= link_to image_tag('basket.jpg', class:"min-w-[3rem] w-12 h-12 rounded-full"), root_path %>
     <div class="overflow-hidden px-2.5 py-5 flex">
       <button class="flex text-xl text-zinc-700 hover:text-zinc-500 my-2 ml-2" data-action="navbar#showDrop navbar#hideDropAlt">Go Out</button>
       <div class="bg-slate-100 z-20 shadow-small min-w-[180px] hidden absolute rounded-b-xl" data-navbar-target="maindrop">
@@ -16,8 +16,8 @@
         <div class="bg-slate-100 z-20 shadow-small min-w-[180px] hidden absolute rounded-b-xl right-5 py-2" data-navbar-target="altdrop">
           <%# link_to "My Profile", home_profile_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
           <%# link_to "Map Stub", home_map_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
-          <%# link_to "Discbag", home_discbag_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
-          <%# link_to "Discs", discs_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
+          <%= link_to "Discbag", home_discbag_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
+          <%= link_to "Discs", discs_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
           <%# link_to "Cards", cards_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
           <%# link_to "Sign Out", destroy_user_session_path, method: :delete, class:"flex   text-zinc-700 hover:text-zinc-500 ml-2 my-2" %><br />
           <button class="flex font-monoton text-4xl text-zinc-700 hover:text-zinc-500 absolute right-3 bottom-2" data-action="navbar#hideDropAlt">x</button>
@@ -26,8 +26,8 @@
     <div class="flex justify-end items-center">
       <%# link_to "Profile", home_profile_path, class:"px-2.5 py-2 hover:text-cyan-600 hidden sm:flex"%>
       <%# link_to "Map Stub", home_map_path, class:"px-2.5 py-2 hover:text-cyan-600 hidden sm:flex"%>
-      <%# link_to "Discbag", home_discbag_path, class:"px-2.5 py-2 hover:text-cyan-600 hidden sm:flex"%>
-      <%# link_to "Discs", discs_path, class:"px-2.5 py-2 hover:text-cyan-600 hidden sm:flex"%>
+      <%= link_to "Discbag", home_discbag_path, class:"px-2.5 py-2 hover:text-cyan-600 hidden sm:flex"%>
+      <%= link_to "Discs", discs_path, class:"px-2.5 py-2 hover:text-cyan-600 hidden sm:flex"%>
       <%# link_to "Cards", cards_path, class:"flex hover:text-cyan-600 hidden sm:flex" %>
       <%# link_to "Sign Out", destroy_user_session_path, method: :delete, class:"hidden sm:flex text-xl text-zinc-700 hover:text-zinc-500 px-2.5 py-2 " %>
     </div>

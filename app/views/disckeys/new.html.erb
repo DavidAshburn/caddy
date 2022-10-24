@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "new_disckey", target: "_top" do %>
+	<%= form_with(model: @disckey, data: {controller: "reset", action: "turbo:submit-end->reset#remove"}) do |form| %>
+		<%= form.hidden_field :disc_id, value: params[:disc_id] %>
+		<%= form.hidden_field :user_id, value:current_user.id %>
+		<%= form.submit "Add", class: "btn-yellow" %>
+	<% end %>
+<% end %>

@@ -1,0 +1,92 @@
+<%= form_with(model: disc, class: "contents") do |form| %>
+  <% if disc.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(disc.errors.count, "error") %> prohibited this disc from being saved:</h2>
+
+      <ul>
+        <% disc.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :maker %>
+    <%= form.text_field :maker, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :model %>
+    <%= form.text_field :model, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :weight %>
+    <%= form.text_field :weight, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :diameter %>
+    <%= form.text_field :diameter, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :height %>
+    <%= form.text_field :height, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :depth %>
+    <%= form.text_field :depth, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :rimdiameter %>
+    <%= form.text_field :rimdiameter, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :rimthickness %>
+    <%= form.text_field :rimthickness, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :rimratio %>
+    <%= form.text_field :rimratio, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :rimconfig %>
+    <%= form.text_field :rimconfig, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :flex %>
+    <%= form.text_field :flex, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :speed %>
+    <%= form.text_field :speed, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :glide %>
+    <%= form.text_field :glide, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :turn %>
+    <%= form.text_field :turn, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="flex flex w-full justify-between text-lg">
+    <%= form.label :fade %>
+    <%= form.text_field :fade, class: "rounded-lg font-righteous text-lg" %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "btn-green" %>
+  </div>
+<% end %>

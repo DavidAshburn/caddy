@@ -1,0 +1,22 @@
+  <div class="flex flex-col justify-center glass-box mt-6">
+    <%= form_with(url: discs_path, method: "GET") do |form| %>
+      <div class="flex justify-center gap-4 px-6 py-2">
+        <h3 aria-label="Maker">Maker</h3>
+        <h3 aria-label="Model">Model</h3>
+      </div>
+      <div class="flex justify-center gap-4 px-6 pb-2">
+        <%= form.text_field :fmaker, class:"rounded-md font-righteous text-lg text-right" %>
+        <%= form.text_field :fmodel, class:"rounded-md font-righteous text-lg" %>
+      </div>
+      <div class="flex justify-center gap-4 px-6 pb-2">
+        <%= form.submit "Search", name: nil, class:"btn-green w-1/4", data: {"turbo-frame": "discsearch"} %>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="discs" class="flex flex-col mx-2 mt-4 justify-center bg-gradient-to-b from-slate-400 to-slate-600 border-t border-l border-gray-200 inset-shadow rounded-lg">
+    <turbo-frame id="discsearch">
+      <%= render @discs %>
+    </turbo-frame>
+  </div>
+
