@@ -1,6 +1,6 @@
-class CreateHoles < ActiveRecord::Migration[7.0]
+class CreateHolepins < ActiveRecord::Migration[7.0]
   def change
-    create_table :holes do |t|
+    create_table :holepins do |t|
       t.integer :number
       t.string :label
       t.integer :tee_1_len
@@ -15,6 +15,6 @@ class CreateHoles < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_index :holes, :course_id
+    add_index :holepins, :course_id
   end
 end

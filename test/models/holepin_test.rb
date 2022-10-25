@@ -1,6 +1,6 @@
 require "test_helper"
 
-class HoleTest < ActiveSupport::TestCase
+class HolepinTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

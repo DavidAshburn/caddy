@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_210229) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_25_073652) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,22 +24,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_210229) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.integer "dgcr_id"
+    t.integer "course_id"
     t.string "name"
-    t.integer "holes"
+    t.string "holes"
     t.string "city"
     t.string "state"
     t.string "country"
     t.string "zipcode"
-    t.integer "reviews"
-    t.float "rating"
-    t.integer "private"
-    t.integer "paytoplay"
-    t.string "tee_1"
-    t.string "tee_2"
-    t.string "tee_3"
-    t.string "tee_4"
+    t.string "reviews"
+    t.string "rating"
+    t.string "private"
+    t.string "paytoplay"
+    t.string "tee_1_clr"
+    t.string "tee_2_clr"
+    t.string "tee_3_clr"
+    t.string "tee_4_clr"
     t.string "dgcr_url"
+    t.string "dgcr_mobile_url"
     t.string "rating_img"
     t.string "rating_img_small"
     t.string "photo_thumb"
@@ -48,6 +49,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_210229) do
     t.string "photo_cap"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "latitude"
+    t.string "longitude"
+    t.string "street_addr"
+    t.integer "creator"
   end
 
   create_table "disckeys", force: :cascade do |t|
@@ -81,7 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_210229) do
     t.index ["user_id"], name: "index_discs_on_user_id"
   end
 
-  create_table "holes", force: :cascade do |t|
+  create_table "holepins", force: :cascade do |t|
     t.integer "number"
     t.string "label"
     t.integer "tee_1_len"
@@ -95,7 +100,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_210229) do
     t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_holes_on_course_id"
+    t.index ["course_id"], name: "index_holepins_on_course_id"
   end
 
   create_table "users", force: :cascade do |t|

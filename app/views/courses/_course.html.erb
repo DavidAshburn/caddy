@@ -1,0 +1,11 @@
+<div id="<%= dom_id course %>" class="flex glass-box justify-center items-center gap-4 px-6 py-2 m-2">
+  <p class="w-1/4">
+    <%= course.name %>
+  </p>
+  <p>
+    <%= link_to "Show", course, class:"btn-green" %>
+  </p>
+  <% if !current_user.courses.include? course %>
+    <%= turbo_frame_tag "new_coursekey", src: new_coursekey_path(:course_id => course.id), target:"_top" %>
+  <% end %>
+</div> 

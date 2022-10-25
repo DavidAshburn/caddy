@@ -1,9 +1,37 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
+  before_action :set_states, only: %i[ index ]
 
   # GET /courses or /courses.json
   def index
-    @courses = current_user.courses
+    
+    if params[:fcity].present? 
+      @city = params[:fcity].downcase
+    end
+    
+    if params[:fstate].present? 
+      @state = params[:fstate]
+    end
+
+    if params[:fcountry].present? 
+      @country = params[:fcountry]
+    end
+    
+    if(@city && @state && @country)
+      @courses = Array.new
+
+      list = helpers.find_loc(@city, @state, @country)
+      list.each do |course|
+        if !Course.find_by(course_id: course.course_id)
+          if !course.save 
+            format.html { render courses, status: :unprocessable_entity }
+          end
+        end
+        @courses.push(Course.find_by(course_id: course.course_id))
+      end
+    else
+      @courses = current_user.courses
+    end
   end
 
   # GET /courses/1 or /courses/1.json
@@ -58,8 +86,17 @@ class CoursesController < ApplicationController
       @course = Course.find(params[:id])
     end
 
+    def set_states
+      states = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']
+      @statelist = []
+      
+      states.each_with_index do |state, i|
+        @statelist.push([state,i+1])
+      end
+    end
+
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:dgcr_id, :name, :holes, :city, :state, :country, :zipcode, :reviews, :rating, :private, :paytoplay, :tee_1, :tee_2, :tee_3, :tee_4, :dgcr_url, :rating_img, :rating_img_small, :photo_thumb, :photo_medium, :photo_cap, :photo_hole)
+      params.require(:course).permit(:course_id, :name, :holes, :city, :state, :country, :zipcode, :latitude, :longitude, :street_addr, :reviews, :rating, :private, :paytoplay, :tee_1, :tee_2, :tee_3, :tee_4, :dgcr_url, :rating_img, :rating_img_small, :photo_thumb, :photo_medium, :photo_cap, :photo_hole, :creator, :fcity, :fstate, :fcountry)
     end
 end

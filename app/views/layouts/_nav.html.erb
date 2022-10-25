@@ -4,7 +4,7 @@
     <div class="overflow-hidden px-2.5 py-5 flex">
       <button class="flex text-xl text-zinc-700 hover:text-zinc-500 my-2 ml-2" data-action="navbar#showDrop navbar#hideDropAlt">Go Out</button>
       <div class="bg-slate-100 z-20 shadow-small min-w-[180px] hidden absolute rounded-b-xl" data-navbar-target="maindrop">
-        <%# link_to "My Courses", courses_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
+        <%= link_to "Courses", courses_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
         <%# link_to "Find a Course", home_search_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
         <button class="flex font-monoton text-4xl  text-zinc-700 hover:text-zinc-500 absolute right-3 bottom-2" data-action="navbar#hideDrop">x</button>
       </div>

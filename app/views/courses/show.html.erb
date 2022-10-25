@@ -1,0 +1,39 @@
+<div class="flex flex-col items-center w-full"> 
+  <div class="flex flex-row w-full justify-center">
+    <h2 class="font-bold sm:text-8xl text-4xl font-righteous text-zinc-800"><%= @course.name %></h2>
+  </div>
+  <h3 class="font-bold sm:text-4xl text-2xl font-righteous text-zinc-800"><%= @course.city %>,&nbsp<%= @course.state %></h3>
+
+  <div class="bg-clip-padding backdrop-filter bg-gradient-to-b from-slate-100 to-slate-300 border-t border-l border-gray-200 inset-shadow rounded-lg w-11/12 flex flex-col p-2 gap-1 items-center">
+    
+    <div class="flex w-11/12">
+      <div class="w-1/2 text-center">
+        Holes:&nbsp<%= @course.holes %>
+      </div>
+      <div class="w-1/2 text-center">
+        Rating:&nbsp<%= @course.rating %>
+      </div>
+    </div>
+    <div class="flex w-11/12">
+      <div class="w-1/2 text-center">
+        Tee1Color:&nbsp<%= @course.tee_1_clr %>
+      </div>
+      <div class="w-1/2 text-center">
+        Tee2Color:&nbsp<%= @course.tee_2_clr %>
+      </div>
+    </div>
+    <div class="flex w-11/12">
+      <div class="w-1/2 text-center">
+        Tee3Color:&nbsp<%= @course.tee_3_clr %>
+      </div>
+      <div class="w-1/2 text-center">
+        Tee4Color:&nbsp<%= @course.tee_4_clr %>
+      </div>
+    </div>
+  </div>
+
+<div class="glass-box w-full p-4 my-2 w-11/12">
+  <%= link_to 'Courses', courses_path, class: "btn-blue" %>
+</div>
+
+</div>

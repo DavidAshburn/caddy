@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "new_coursekey", target: "_top" do %>
+	<%= form_with(model: @coursekey, data: {controller: "reset", action: "turbo:submit-end->reset#remove"}) do |form| %>
+		<%= form.hidden_field :course_id, value: params[:course_id] %>
+		<%= form.hidden_field :user_id, value:current_user.id %>
+		<%= form.submit "Add", class: "btn-yellow" %>
+	<% end %>
+<% end %>

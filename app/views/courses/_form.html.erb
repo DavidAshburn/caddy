@@ -1,0 +1,38 @@
+<%= form_with(model: course, class: "contents") do |form| %>
+  <% if course.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+        <% course.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.hidden_field :dgcr_id, value: %>
+  <%= form.hidden_field :name, value: %>
+  <%= form.hidden_field :holes, value: %>
+  <%= form.hidden_field :city, value: %>
+  <%= form.hidden_field :state, value: %>
+  <%= form.hidden_field :county, value: %>
+  <%= form.hidden_field :zipcode, value: %>
+  <%= form.hidden_field :reviews, value: %>
+  <%= form.hidden_field :rating, value: %>
+  <%= form.hidden_field :private, value: %>
+  <%= form.hidden_field :paytoplay, value: %>
+  <%= form.hidden_field :tee_1, value: %>
+  <%= form.hidden_field :tee_2, value: %>
+  <%= form.hidden_field :tee_3, value: %>
+  <%= form.hidden_field :tee_4, value: %>
+  <%= form.hidden_field :dgcr_url, value: %>
+  <%= form.hidden_field :rating_img, value: %>
+  <%= form.hidden_field :rating_img_small, value: %>
+  <%= form.hidden_field :photo_thumb, value: %>
+  <%= form.hidden_field :photo_medium, value: %>
+  <%= form.hidden_field :photo_hole, value: %>
+  <%= form.hidden_field :photo_cap, value: %>
+  <div class="actions btn-green mt-4 w-full">
+    <%= form.submit %>
+  </div>
+<% end %>
