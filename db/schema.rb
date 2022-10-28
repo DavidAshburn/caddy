@@ -87,8 +87,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_25_073652) do
   end
 
   create_table "holepins", force: :cascade do |t|
-    t.integer "number"
-    t.string "label"
+    t.integer "hole_num"
+    t.string "hole_lbl"
     t.integer "tee_1_len"
     t.integer "tee_2_len"
     t.integer "tee_3_len"

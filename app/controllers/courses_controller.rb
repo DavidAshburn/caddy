@@ -8,11 +8,9 @@ class CoursesController < ApplicationController
     if params[:fcity].present? 
       @city = params[:fcity].downcase
     end
-    
     if params[:fstate].present? 
       @state = params[:fstate]
     end
-
     if params[:fcountry].present? 
       @country = params[:fcountry]
     end

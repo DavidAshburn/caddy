@@ -1,8 +1,8 @@
 class CreateHolepins < ActiveRecord::Migration[7.0]
   def change
     create_table :holepins do |t|
-      t.integer :number
-      t.string :label
+      t.integer :hole_num
+      t.string :hole_lbl
       t.integer :tee_1_len
       t.integer :tee_2_len
       t.integer :tee_3_len
