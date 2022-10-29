@@ -16,9 +16,17 @@
     <% end %>
   </div>
 
-  <div id="courses" class="flex flex-col mx-2 mt-4 justify-center bg-gradient-to-b from-slate-400 to-slate-600 border-t border-l border-gray-200 inset-shadow rounded-lg">
+  <div id="courses" class="flex flex-col mx-2 mt-4 w-5/6 py-4 px-16 justify-center glass-box rounded-lg">
     <turbo-frame id="coursesearch">
       <%= render @courses %>
     </turbo-frame>
   </div>
+  <% if @loc %>
+    <div class="border border-black p-4 text-center">
+      <%= @loc.latitude %>
+    </div>
+    <div class="border border-black p-4 text-center">
+      <%= @loc.longitude %>
+    </div>
+  <% end %>
 

@@ -33,11 +33,16 @@ module DgcrHelper
 		JSON.parse(response)
 	end
 
-	def near_rad(lat, lon, rad)
+	def near_rad(lat, lon)
 		signature = Digest::MD5.hexdigest "#{ENV['DGCR_KEY']}#{ENV['DGCR_SEC']}near_rad"
-		uri = URI("https://www.dgcoursereview.com/api_test/?key=#{ENV['DGCR_KEY']}&mode=near_rad&lat=#{lat}&lon=#{lon}&limit=25&rad=#{rad}&sig=#{signature}")
+		uri = URI("https://www.dgcoursereview.com/api_test/?key=#{ENV['DGCR_KEY']}&mode=near_rad&lat=#{lat}&lon=#{lon}&limit=24&rad=10&sig=#{signature}")
 		response = Net::HTTP.get(uri)
-		JSON.parse(response)
+		list = JSON.parse(response)
+		courses = Array.new
+		list.each do |item|
+			courses.push(Course.new(item.except("distance")))
+		end
+		return courses
 	end
 
 	def find_name(moniker)
