@@ -1,0 +1,163 @@
+<div data-controller="viewcard" class="flex flex-col justify-start h-[82vh] w-11/12 sm:w-5/6 font-bold font-righteous">
+  <div class="hidden font-raleway text-xl" data-viewcard-target="hiddenPars"><%= @pars %></div>
+  <div class="hidden font-raleway text-xl" data-viewcard-target="hiddenShots"><%= @card.shots %></div>
+  <div class="hidden font-raleway text-xl" data-viewcard-target="hiddenLength"><%= @card.length %></div>
+  <div class="hidden font-raleway text-xl" data-viewcard-target="testDisplay"></div>
+
+  <div class="flex flex-col items-center text-4xl mt-4 text-zinc-800">
+    <div class="flex flex-row w-full justify-center">
+      <h2 class=" text-6xl"><%= @course.name %></h2>
+    </div>
+    <div class="flex justify-center gap-4 w-4/5">
+      <h3 class=" text-2xl"><%= @course.city %>,&nbsp<%= @course.state %></h3>
+    </div>
+  </div>
+
+  <div class="flex flex-col w-full mt-4 text-xl text-slate-800">
+    
+    <div class="flex flex-col justify-evenly items-center glass-box rounded-lg border-t border-l border-gray-200 inset-shadow">
+
+      <div class=" flex justify-evenly align-center w-full rounded-lg border-b border-slate-200 inset-shadow">
+        <% (1..9).each do |x|%>
+          <div class=" w-[11.11%] text-center p-2"><%= x %></div>
+        <% end %>
+      </div>
+      <div class=" flex justify-evenly align-center w-full rounded-lg border-b-2 border-slate-600/50">
+        <% @pars.each_with_index do |element, index| %>
+          <% if index < 9 %>
+            <div class="font-raleway font-normal text-slate-700 w-[11.11%] text-center pb-2 pt-1">
+              <%= element %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class=" flex justify-evenly align-center w-full rounded-lg border-b border-slate-100/20">
+        <% (1..9).each do |x|%>
+          <div class=" w-[11.11%] text-center text-2xl p-1" data-viewcard-target="cardHole"></div>
+        <% end %>
+      </div>
+
+    </div>
+
+    <% if @card.length == 18 %>
+      <div class="flex flex-col justify-evenly items-center glass-box rounded-lg border-t border-l border-gray-200 mt-2 inset-shadow">
+
+      <div class=" flex justify-evenly align-center w-full rounded-lg border-b border-slate-200 inset-shadow">
+        <% (10..18).each do |x|%>
+          <div class=" w-[11.11%] text-center p-2"><%= x %></div>
+        <% end %>
+      </div>
+      <div class=" flex justify-evenly align-center w-full rounded-lg border-b-2 border-slate-600/50">
+        <% @pars.each_with_index do |element, index| %>
+          <% if index > 8 %>
+            <div class="font-raleway font-normal text-slate-700 w-[11.11%] text-center pb-2 pt-1">
+              <%= element %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class=" flex justify-evenly align-center w-full rounded-lg border-b border-slate-100/20">
+        <% (1..9).each do |x|%>
+          <div class=" w-[11.11%] text-center text-2xl p-1" data-viewcard-target="cardHole"></div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>    
+  </div>
+
+  <div class="flex flex-col items-center glass-box rounded-lg border-t border-l border-gray-200 mt-2 inset-shadow text-zinc-800">
+    <div class="flex w-5/6 justify-between mt-4">
+      <h3 class=" text-2xl ">Score</h3>
+      <h3 class=" text-2xl rounded-full bg-white p-2 min-w-[3rem] text-center" data-viewcard-target="cardScore"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between my-1">
+      <h3 class=" text-xl">Par</h3>
+      <h3 class=" text-xl p-2 min-w-[3rem] text-center" data-viewcard-target="coursePar"></h3>
+    </div>
+    <div class="w-5/6 h-[2px] border border-zinc-300"></div>
+    <div class="flex w-5/6 justify-end my-4">
+      <h3 class=" text-2xl rounded-full bg-white p-2 min-w-[3rem] text-center" data-viewcard-target="overUnder"></h3>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center glass-box rounded-lg border-t border-l border-gray-200 mt-2 inset-shadow text-lg text-zinc-800">
+    <div class="flex w-11/12 justify-between items-center mt-2 glass-box rounded-full p-2">
+      <h3 class=" text-2xl pl-4">Drives</h3>
+      <h3 class=" text-2xl border-4 rounded-full border-black p-2 bg-teal-50" data-viewcard-target="fairwayPercentage"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Fairway</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="fairway4"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Circle One</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="fairway1"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Circle Two</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="fairway2"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Off-Fairway</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="fairwayO"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1 mb-3">
+      <h3 class=" ml-6">Penalty</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="fairwayP"></h3>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center glass-box rounded-lg border-t border-l border-gray-200 mt-2 inset-shadow text-lg text-zinc-800">
+    <div class="flex w-11/12 justify-between items-center mt-2 glass-box rounded-full p-2">
+      <h3 class=" text-2xl pl-4">C1x</h3>
+      <h3 class=" text-2xl border-4 rounded-full border-black p-2 bg-teal-50" data-viewcard-target="cOneXPercentage"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Baskets from 11-22ft</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="cOneMid"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Baskets from 22-33ft</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="cOneFar"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Tap-ins</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="cOneTap"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Misses</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="cOneMisses"></h3>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center glass-box rounded-lg border-t border-l border-gray-200 mt-2 inset-shadow text-lg text-zinc-800">
+    <div class="flex w-11/12 justify-between items-center mt-2 glass-box rounded-full p-2">
+      <h3 class=" text-2xl pl-4">C2</h3>
+      <h3 class=" text-2xl border-4 rounded-full border-black p-2 bg-teal-50" data-viewcard-target="cTwoPercentage"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Baskets from 33-44ft</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="cTwoNear"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Baskets from 44-55ft</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="cTwoMid"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Baskets from 55-66ft</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="cTwoFar"></h3>
+    </div>
+    <div class="flex w-5/6 justify-between m-1">
+      <h3 class=" ml-6">Misses</h3>
+      <h3 class=" pr-2 lg:pr-0" data-viewcard-target="cTwoMisses"></h3>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center glass-box rounded-full border-t border-l border-gray-200 mt-2 mb-4 inset-shadow pb-2 text-zinc-800">
+    <div class="flex w-5/6 justify-between mt-2">
+      <h3 class=" text-xl">Penalties</h3>
+      <h3 class=" text-xl pr-2 lg:pr-0" data-viewcard-target="penaltyShots"></h3>
+    </div>
+  </div>
+  <div class="flex w-full h-2">&nbsp</div>
+</div>

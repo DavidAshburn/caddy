@@ -9,5 +9,7 @@ class User < ApplicationRecord
 
   has_many :coursekeys
   has_many :courses, :through => :coursekeys
+
+  has_many :cards
   
 end

@@ -1,0 +1,22 @@
+<div class="w-full font-righteous text-zinc-800">
+  <div class="flex flex-col items-center"> 
+    <div class="flex flex-row w-full justify-center">
+      <h1 class="font-bold sm:text-8xl text-6xl mt-4">Cards</h1>
+    </div>
+  </div>
+
+  <div class="flex flex-col w-full gap-4 mt-8 px-10">
+    <% @courses.each do |course| %>
+      <% course.cards.each do |card| %>
+        <%= link_to card do %>
+          <div class="flex justify-evenly items-center glass-box">
+            <div class="font-bold text-lg max-w-[50%] text-center"><%= course.name %></div>
+            <div class="font-bold text-lg max-w-[50%] text-center text-cyan-200"><%= card.created_at.strftime("%m/%d/%y") %></div>
+            <div class="font-raleway max-w-[35%] text-center"><%= card.score %></div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

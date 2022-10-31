@@ -1,0 +1,117 @@
+<div data-controller="scorecard" class="flex flex-col justify-between h-[82vh]">
+  <div class="hidden" data-scorecard-target="hiddenPars"><%= @pars %></div>
+  <div class="hidden" data-scorecard-target="hiddenLength"><%= @length %></div>
+
+  <div class="flex flex-col items-center font-righteous font-bold text-4xl mt-4">
+    <div class="flex flex-row w-full justify-center text-center p-4">
+      <h2 class="text-6xl text-white"><%= @course.name %></h2>
+    </div>
+    <div class="flex flex-col items-center gap-4 w-4/5 sm:text-4xl text-2xl">
+      <h3 class="text-slate-200">~&nbsp<%= @course.city %>,&nbsp<%= @course.state %>&nbsp~</h3>
+    </div>
+  </div>
+  <div class="flex flex-col w-full text-xl text-slate-800 mt-2 p-4">
+    <div class="flex flex-col justify-evenly items-center glass-box rounded-lg border-t border-l border-gray-200 inset-shadow">
+      <div class=" flex justify-evenly align-center w-full rounded-lg border-b border-slate-200 inset-shadow">
+        <% (1..9).each do |x|%>
+          <div class="font-bold font-righteous w-[11.11%] text-center p-2" data-scorecard-target="scorecardNumber"><%= x %></div>
+        <% end %>
+      </div>
+      <div class=" flex justify-evenly align-center w-full rounded-lg border-b-2 border-slate-600/50">
+        <% @pars.each_with_index do |element, index| %>
+          <% if index < 9 %>
+            <div class="font-raleway text-slate-700 w-[11.11%] text-center pb-2 pt-1">
+              <%= element %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class=" flex justify-evenly align-center w-full rounded-lg border-b border-slate-100/20">
+        <% (1..9).each do |x|%>
+          <div class="font-bold font-righteous w-[11.11%] text-center text-2xl p-1" data-scorecard-target="cardHole"></div>
+        <% end %>
+      </div>
+    </div>
+    <% if @length == 18 %>
+      <div class="flex flex-col justify-evenly items-center glass-box rounded-lg border-t border-l border-gray-200 mt-2 inset-shadow">
+        <div class=" flex justify-evenly align-center w-full rounded-lg border-b border-slate-200 inset-shadow">
+          <% (10..18).each do |x|%>
+            <div class="font-bold font-righteous w-[11.11%] text-center p-2 text-slate-700" data-scorecard-target="scorecardNumber"><%= x %></div>
+          <% end %>
+        </div>
+        <div class=" flex justify-evenly align-center w-full rounded-lg border-b-2 border-slate-600/50">
+          <% @pars.each_with_index do |element, index| %>
+            <% if index > 8 %>
+              <div class="font-raleway text-slate-700 w-[11.11%] text-center pb-2 pt-1">
+                <%= element %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class=" flex justify-evenly align-center w-full rounded-lg border-b border-slate-100/20">
+          <% (1..9).each do |x|%>
+            <div class="font-bold font-righteous w-[11.11%] text-center text-2xl p-1" data-scorecard-target="cardHole"></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>    
+  </div>
+  <div class="flex justify-center mt-4 font-righteous">
+    <div class="glass-box flex flex-col justify-center items-center text-4xl text-white text-center h-80 w-11/12">
+      <div class="flex justify-evenly align-center gap-4">
+        <button class="glass-button min-h-[3rem] min-w-[3rem] my-6" data-action="scorecard#undoShot">-</button>
+        <div class="flex flex-col w-1/3 items-center mt-1">
+          <div class="text-xl text-slate-600 font-raleway">Score</div>
+          <div data-scorecard-target="holeScore"></div>
+        </div>
+        <button class="glass-button min-h-[3rem] min-w-[3rem] my-6" data-action="scorecard#openShotModal">+</button>
+      </div>
+      <div class="glass-button flex justify-center gap-2 w-11/12 h-40" data-scorecard-target="shotIcons"></div>
+      <div class="flex justify-evenly align-center gap-4">
+        <button class="glass-button min-h-[4rem] min-w-[4rem] pr-1 my-6" data-action="scorecard#lastHole"><</button>
+        <div class="flex flex-col w-1/3 items-center mt-1">
+          <div class="text-xl text-slate-600 font-raleway">Hole</div>
+          <div class="text-6xl " data-scorecard-target="holeNumber"></div>
+        </div>
+        <button class="glass-button min-h-[4rem] min-w-[4rem] pl-1 my-6" data-action="scorecard#nextHole">></button>
+      </div>
+    </div>
+  </div>
+  <%= form_with(model: @card, class: "contents") do |form| %>
+    <% if @card.errors.any? %>
+      <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+        <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+        <ul>
+          <% @card.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= form.hidden_field :length, value: @length %>
+    <%= form.hidden_field :shots, data: { scorecard_target: "hiddenShots"} %>
+    <%= form.hidden_field :score, data: { scorecard_target: "hiddenScore"} %>
+    <%= form.hidden_field :tee, value: @tee %>
+    <%= form.hidden_field :course_id, value: @course.id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+    <div class="hidden h-[22rem] absolute bottom-1/3 left-1/4 w-1/2 px-4 py-6 glass-blur border-2 border-sky-200 rounded-md flex flex-col gap-4 items-center" data-scorecard-target="submitModal">
+      <h4 class="text-3xl text-center font-righteous">Save this scorecard?</h4>
+      <div class="btn-yellow w-full" data-action="click->scorecard#closeSubmitModal">Not yet</div>
+      <%= form.submit class: "btn-green" %>
+      <div class="btn-blue w-full" data-action="click->scorecard#closeSubmitModal">Wait</div>
+      <div class="btn-grey w-full" data-action="click->scorecard#closeSubmitModal">Go back</div>
+    </div>
+  <% end %>
+  <div class="hidden h-[26rem] absolute bottom-1/4 left-1/4 w-1/2 px-4 py-4 glass-blur border-2 border-sky-200 rounded-md flex flex-col gap-4 items-center" data-scorecard-target="shotModal">
+    <button class="btn-blue w-3/4" data-action="scorecard#fairwayShot">Fairway</button>
+    <button class="btn-blue w-3/4" data-action="scorecard#offFairwayShot">Off Fairway</button>
+    <button class="btn-blue w-3/4" data-action="scorecard#circleTwoShot">Circle Two</button>
+    <button class="btn-blue w-3/4" data-action="scorecard#circleOneShot">Circle One</button>
+    <button class="btn-green w-3/4" data-action="scorecard#openBasketModal scorecard#closeShotModal">Basket</button>
+    <button class="btn-yellow w-3/4" data-action="scorecard#penaltyShot">OB / Penalty</button>
+    <button class="btn-grey w-1/4" data-action="scorecard#closeShotModal">Close</button>
+  </div>
+  <div class="hidden absolute bottom-1/4 left-1/4 w-1/2 px-4 py-6 h-[16rem] glass-blur border-2 border-sky-200 rounded-md flex flex-col gap-4 items-center" data-scorecard-target="basketModal"></div>
+</div>

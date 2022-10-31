@@ -5,6 +5,7 @@ require 'json'
 class Course < ApplicationRecord
 	has_many :holepins
 	has_many :coursekeys
+	has_many :cards
 
 	after_create :get_hole_info
 
