@@ -1,11 +1,47 @@
-<div id="<%= dom_id course %>" class="flex glass-box justify-center items-center gap-10 px-6 py-2">
-  <p class="w-1/4">
+<div id="<%= dom_id course %>" class="flex flex-col glass-box rounded-lg items-center gap-2 px-6 py-2 mb-4">
+  <div class="text-xl text-center py-2">
     <%= course.name %>
-  </p>
-  <p>
-    <%= link_to "Show", course, class:"btn-green" %>
-  </p>
-  <% if !current_user.courses.include? course %>
-    <%= turbo_frame_tag "new_coursekey", src: new_coursekey_path(:course_id => course.id), target:"_top" %>
-  <% end %>
+  </div>
+  <div class="flex gap-4 py-2 items-center">
+    <div class="text-right">
+      <%= course.city %>,&nbsp<%= course.state %>
+    </div>
+  </div>
+  <div class="flex gap-4 py-2 items-center justify-center">
+
+    <% checker = course.holepins[0] %>
+    <% if checker.tee_1_len != 0 %>
+      <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_1_clr %>;">
+        <p class="rounded-full bg-green-50 px-1"> <%= course.layoutlength(1) %> </p>
+        <p class="text-3xl rounded-full bg-white p-1"> <%= course.layoutpar(1) %> </p>
+      </div>
+    <% end %>
+    <% if checker.tee_2_len != 0 %>
+      <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_2_clr %>;">
+        <p class="rounded-full bg-green-50 px-1"> <%= course.layoutlength(2) %> </p>
+        <p class="text-3xl rounded-full bg-white p-1"> <%= course.layoutpar(2) %> </p>
+      </div>
+    <% end %>
+    <% if checker.tee_3_len != 0 %>
+      <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_3_clr %>;">
+        <p class="rounded-full bg-green-50 px-1"> <%= course.layoutlength(3) %> </p>
+        <p class="text-3xl rounded-full bg-white p-1"> <%= course.layoutpar(3) %> </p>
+      </div>
+    <% end %>
+    <% if checker.tee_4_len != 0 %>
+      <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_4_clr %>;">
+        <p class="rounded-full bg-green-50 px-1"> <%= course.layoutlength(4) %> </p>
+        <p class="text-3xl rounded-full bg-white p-1"> <%= course.layoutpar(4) %> </p>
+      </div>
+    <% end %>
+
+  </div>
+  <div class="flex gap-4 py-2 items-center">
+    <p>
+      <%= link_to "Show", course, class:"btn-green" %>
+    </p>
+    <% if !current_user.courses.include? course %>
+      <%= turbo_frame_tag "new_coursekey", src: new_coursekey_path(:course_id => course.id), target:"_top" %>
+    <% end %>
+  </div>
 </div> 
