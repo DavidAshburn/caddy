@@ -4,46 +4,62 @@
   </div>
   <h3 class="font-bold sm:text-4xl text-2xl font-righteous text-zinc-800"><%= @course.city %>,&nbsp<%= @course.state %></h3>
 
-  <div class="bg-clip-padding backdrop-filter bg-gradient-to-b from-slate-100 to-slate-300 border-t border-l border-gray-200 inset-shadow rounded-lg w-11/12 flex flex-col p-2 gap-1 items-center">
-    
+  <div class="gray-box w-11/12 flex flex-col p-2 gap-1 items-center">
     <div class="flex w-11/12">
-      <div class="w-1/2 text-center">
-        Holes:&nbsp<%= @course.holes %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Holes&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @course.holes %></span>
+        </div>
       </div>
-      <div class="w-1/2 text-center">
-        Rating:&nbsp<%= @course.rating %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Rating&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @course.rating %></span><span class="text-sm">/5</span>
+        </div>
       </div>
     </div>
     <div class="flex w-11/12">
-      <div class="w-1/2 items-center flex flex-col">
-        <div>
-          Tee 1 Color
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Tee 1 |
         </div>
-        <div class="rounded-full h-12 w-12 mt-2" style="background-color:#<%= @course.tee_1_clr %>"></div>
+        <div class="w-1/2 pl-1">
+          <div class="rounded-full h-6 w-6" style="background-color:#<%= @course.tee_1_clr %>"></div>
+        </div>
       </div>
-      <div class="w-1/2 items-center flex flex-col">
-        <div>
-          Tee 2 Color
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Tee 2 |
         </div>
-        <div class="rounded-full h-12 w-12 mt-2" style="background-color:#<%= @course.tee_2_clr %>"></div>
+        <div class="w-1/2 pl-1">
+          <div class="rounded-full h-6 w-6" style="background-color:#<%= @course.tee_2_clr %>"></div>
+        </div>
       </div>
     </div>
     <div class="flex w-11/12">
-      <div class="w-1/2 items-center flex flex-col">
-        <div>
-          Tee 3 Color
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Tee 3 |
         </div>
-        <div class="rounded-full h-12 w-12 mt-2" style="background-color:#<%= @course.tee_3_clr %>"></div>
+        <div class="w-1/2 pl-1">
+          <div class="rounded-full h-6 w-6" style="background-color:#<%= @course.tee_3_clr %>"></div>
+        </div>
       </div>
-      <div class="w-1/2 items-center flex flex-col">
-        <div>
-          Tee 4 Color
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Tee 4 |
         </div>
-        <div class="rounded-full h-12 w-12 mt-2" style="background-color:#<%= @course.tee_4_clr %>"></div>
+        <div class="w-1/2 pl-1">
+          <div class="rounded-full h-6 w-6" style="background-color:#<%= @course.tee_4_clr %>"></div>
+        </div>
       </div>
     </div>
   </div>
-
 <div class="glass-box w-full p-4 my-2 w-11/12">
   <%= link_to 'Courses', courses_path, class: "btn-blue" %>
 </div>

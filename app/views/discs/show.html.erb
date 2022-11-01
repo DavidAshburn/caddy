@@ -5,50 +5,104 @@
   <h3 class="font-bold sm:text-4xl text-2xl font-righteous text-zinc-800"><%= @disc.maker %></h3>
 
   <div class="bg-clip-padding backdrop-filter bg-gradient-to-b from-slate-100 to-slate-300 border-t border-l border-gray-200 inset-shadow rounded-lg w-11/12 flex flex-col p-2 gap-1 items-center">
-    
     <div class="flex w-11/12">
-      <div class="w-1/2 text-center">
-        Weight:&nbsp<%= @disc.weight %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Weight&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @disc.weight %></span><span class="text-sm">gr</span>
+        </div>
       </div>
-      <div class="w-1/2 text-center">
-        Height:&nbsp<%= @disc.height %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Height&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @disc.height %></span><span class="text-sm">cm</span>
+        </div>
       </div>
     </div>
     <div class="flex w-11/12">
-      <div class="w-1/2 text-center">
-        Diameter:&nbsp<%= @disc.diameter %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Diameter&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @disc.diameter %></span><span class="text-sm">cm</span>
+        </div>
       </div>
-      <div class="w-1/2 text-center">
-        Rim&nbspDepth:&nbsp<%= @disc.depth %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Rim&nbspDepth&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @disc.depth %></span><span class="text-sm">cm</span>
+        </div>
       </div>
     </div>
     <div class="flex w-11/12">
-      <div class="w-1/2 text-center">
-        Inner&nbspDiameter:&nbsp<%= @disc.rimdiameter %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Inner&nbspDiam.&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @disc.rimdiameter %></span><span class="text-sm">cm</span>
+        </div>
       </div>
-      <div class="w-1/2 text-center">
-        Rim&nbspWidth:&nbsp<%= @disc.rimthickness %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Rim&nbspWidth&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @disc.rimthickness %></span><span class="text-sm">cm</span>
+        </div>
       </div>
     </div>
     <div class="flex justify-center w-11/12">
-      <div class="w-1/2 text-center">
-        Flexibility:&nbsp<%= @disc.flex %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Flexibility&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @disc.flex %></span><span class="text-sm">kg</span>
+        </div>
       </div>
     </div>
     <div class="flex w-11/12 mt-4">
-      <div class="w-1/2 text-center">
-        Speed:&nbsp<%= @disc.speed %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Speed&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @disc.speed %></span>
+        </div>
       </div>
-      <div class="w-1/2 text-center">
-        Glide:&nbsp<%= @disc.glide %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Glide&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @disc.glide %></span>
+        </div>
       </div>
     </div>
     <div class="flex w-11/12">
-      <div class="w-1/2 text-center">
-        Turn:&nbsp<%= @disc.turn %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Turn&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @disc.turn %></span>
+        </div>
       </div>
-      <div class="w-1/2 text-center">
-        Fade:&nbsp<%= @disc.fade %>
+      <div class="w-1/2 flex">
+        <div class="w-1/2 text-right">
+          Fade&nbsp|
+        </div>
+        <div class="w-1/2">
+          <span class="font-bold">&nbsp<%= @disc.fade %></span>
+        </div>
       </div>
     </div>
 

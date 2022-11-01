@@ -19,20 +19,16 @@
     @apply py-2 px-4 min-w-fit text-center bg-gradient-to-t from-stone-500 hover:from-stone-600 via-neutral-300 hover:via-neutral-400 to-zinc-200 hover:to-zinc-300 rounded-full font-raleway font-bold text-gray-700 focus:text-white focus:border-2 focus:border-white shadow-[inset_0_-2px_4px_rgba(220,220,255,0.2)];
   }
 
-  .buck-navlink {
-    @apply flex font-lato font-bold text-sm no-underline hover:text-white mx-4 my-4;
-  }
-
-  .buck-navlink-hide {
-    @apply flex font-lato font-bold text-sm no-underline hover:text-white hidden sm:flex mx-[3vw] my-2;
-  }
-
   .inset-shadow {
     @apply shadow-[inset_0_-2px_4px_rgba(255,255,255,0.5)];
   }
 
   .glass-box {
     @apply rounded-full bg-clip-padding backdrop-filter bg-gradient-to-b from-slate-100/20 to-slate-300/40 border-b border-l inset-shadow transition-all ease-in;
+  }
+
+  .gray-box {
+    @apply bg-clip-padding backdrop-filter bg-gradient-to-b from-slate-100 to-slate-300 border-t border-l border-gray-200 inset-shadow rounded-lg
   }
 
   .glass-button {
