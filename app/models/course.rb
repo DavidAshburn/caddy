@@ -59,7 +59,7 @@ class Course < ApplicationRecord
 		info = hole_info(self.course_id)
 		info.shift()
 		if info.count < 18 && info.count > 9
-			while info.count > 8
+			while info.count > 9
 				info.pop()
 			end
 			self.holes = 9

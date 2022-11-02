@@ -60,10 +60,170 @@
         <% end %>
     </div>
   </div>
-<div class="glass-box w-full p-4 my-2 w-11/12">
-  <%= link_to 'Back', 'javascript:history.back()', class: "btn-blue" %>
-</div>
-<div>
-  <%= crse_info(@course.course_id) %>
-</div>
+
+  <% if @course.tee_1_clr != "" && @course.holepins[0].tee_1_par != 0%>
+    <div class="flex flex-col w-10/12 mt-4">
+      <div class="flex flex-col justify-evenly items-center gray-box border-4" style="border-color:#<%= @course.tee_1_clr %>">
+
+        <div class=" flex justify-evenly align-center w-full">
+          <% (1..9).each do |x|%>
+            <div class="font-raleway w-[11.11%] text-center"><%= x %></div>
+          <% end %>
+        </div>
+        <div class=" flex justify-evenly align-center w-full">
+          <% @course.holepins.each_with_index do |element, index| %>
+            <% if index < 9 %>
+              <div class="font-bold font-righteous text-lg w-[11.11%] text-center">
+                <%= element.tee_1_par %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <% if @course.holes == "18" %>
+        <div class="flex flex-col justify-evenly items-center gray-box border-4" style="border-color:#<%= @course.tee_1_clr %>">
+        <div class=" flex justify-evenly align-center w-full">
+          <% (10..18).each do |x|%>
+            <div class="font-raleway w-[11.11%] text-center"><%= x %></div>
+          <% end %>
+        </div>
+        <div class=" flex justify-evenly align-center w-full">
+          <% @course.holepins.each_with_index do |element, index| %>
+            <% if index > 8 %>
+              <div class="font-bold font-righteous text-lg w-[11.11%] text-center">
+                <%= element.tee_1_par %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>    
+    </div>
+  <% end %>
+
+  <% if @course.tee_2_clr != "" && @course.holepins[0].tee_2_par != 0 %>
+    <div class="flex flex-col w-10/12 mt-4">
+      <div class="flex flex-col justify-evenly items-center gray-box border-4" style="border-color:#<%= @course.tee_2_clr %>">
+
+        <div class=" flex justify-evenly align-center w-full">
+          <% (1..9).each do |x|%>
+            <div class="font-raleway w-[11.11%] text-center"><%= x %></div>
+          <% end %>
+        </div>
+        <div class=" flex justify-evenly align-center w-full">
+          <% @course.holepins.each_with_index do |element, index| %>
+            <% if index < 9 %>
+              <div class="font-bold font-righteous text-lg w-[11.11%] text-center">
+                <%= element.tee_2_par %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <% if @course.holes == "18" %>
+        <div class="flex flex-col justify-evenly items-center gray-box border-4" style="border-color:#<%= @course.tee_2_clr %>">
+        <div class=" flex justify-evenly align-center w-full">
+          <% (10..18).each do |x|%>
+            <div class="font-raleway w-[11.11%] text-center"><%= x %></div>
+          <% end %>
+        </div>
+        <div class=" flex justify-evenly align-center w-full">
+          <% @course.holepins.each_with_index do |element, index| %>
+            <% if index > 8 %>
+              <div class="font-bold font-righteous text-lg w-[11.11%] text-center">
+                <%= element.tee_2_par %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>    
+    </div>
+  <% end %>
+
+  <% if @course.tee_3_clr != "" && @course.holepins[0].tee_3_par != 0 %>
+    <div class="flex flex-col w-10/12 mt-4">
+      <div class="flex flex-col justify-evenly items-center gray-box border-4" style="border-color:#<%= @course.tee_3_clr %>">
+
+        <div class=" flex justify-evenly align-center w-full">
+          <% (1..9).each do |x|%>
+            <div class="font-raleway w-[11.11%] text-center"><%= x %></div>
+          <% end %>
+        </div>
+        <div class=" flex justify-evenly align-center w-full">
+          <% @course.holepins.each_with_index do |element, index| %>
+            <% if index < 9 %>
+              <div class="font-bold font-righteous text-lg w-[11.11%] text-center">
+                <%= element.tee_3_par %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <% if @course.holes == "18" %>
+        <div class="flex flex-col justify-evenly items-center gray-box border-4" style="border-color:#<%= @course.tee_3_clr %>">
+        <div class=" flex justify-evenly align-center w-full">
+          <% (10..18).each do |x|%>
+            <div class="font-raleway w-[11.11%] text-center"><%= x %></div>
+          <% end %>
+        </div>
+        <div class=" flex justify-evenly align-center w-full">
+          <% @course.holepins.each_with_index do |element, index| %>
+            <% if index > 8 %>
+              <div class="font-bold font-righteous text-lg w-[11.11%] text-center">
+                <%= element.tee_3_par %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>    
+    </div>
+  <% end %>
+
+  <% if @course.tee_4_clr != "" && @course.holepins[0].tee_4_par != 0 %>
+    <div class="flex flex-col w-10/12 mt-4">
+      <div class="flex flex-col justify-evenly items-center gray-box border-4" style="border-color:#<%= @course.tee_4_clr %>">
+
+        <div class=" flex justify-evenly align-center w-full">
+          <% (1..9).each do |x|%>
+            <div class="font-raleway w-[11.11%] text-center"><%= x %></div>
+          <% end %>
+        </div>
+        <div class=" flex justify-evenly align-center w-full">
+          <% @course.holepins.each_with_index do |element, index| %>
+            <% if index < 9 %>
+              <div class="font-bold font-righteous text-lg w-[11.11%] text-center">
+                <%= element.tee_4_par %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <% if @course.holes == "18" %>
+        <div class="flex flex-col justify-evenly items-center gray-box border-4" style="border-color:#<%= @course.tee_4_clr %>">
+        <div class=" flex justify-evenly align-center w-full">
+          <% (10..18).each do |x|%>
+            <div class="font-raleway w-[11.11%] text-center"><%= x %></div>
+          <% end %>
+        </div>
+        <div class=" flex justify-evenly align-center w-full">
+          <% @course.holepins.each_with_index do |element, index| %>
+            <% if index > 8 %>
+              <div class="font-bold font-righteous text-lg w-[11.11%] text-center">
+                <%= element.tee_4_par %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>    
+    </div>
+  <% end %>
+
+
+  <div class="glass-box w-full p-4 my-2 w-11/12">
+    <%= link_to 'Back', 'javascript:history.back()', class: "btn-blue" %>
+    <%= @course.course_id %>
+  </div>
 </div>
