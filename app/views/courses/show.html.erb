@@ -1,37 +1,31 @@
 <div class="flex flex-col items-center w-full"> 
-  <div class="flex flex-row w-full justify-center">
-    <h2 class="font-bold sm:text-8xl text-4xl font-righteous text-zinc-800"><%= @course.name %></h2>
+  <div class="flex flex-row px-6 justify-center">
+    <h2 class="font-bold sm:text-8xl text-4xl font-righteous text-zinc-800 pt-4"><%= @course.name %></h2>
   </div>
-  <h3 class="font-bold sm:text-4xl text-2xl font-righteous text-zinc-800"><%= @course.city %>,&nbsp<%= @course.state %></h3>
+  <h3 class="font-bold sm:text-4xl text-2xl font-righteous text-zinc-800 pb-4"><%= @course.city %>,&nbsp<%= @course.state %></h3>
 
   <div class="gray-box w-11/12 flex flex-col p-2 gap-1 items-center">
     <div class="flex w-11/12">
-      <div class="w-1/2 flex">
-        <div class="w-1/2 text-right">
-          Holes&nbsp|
-        </div>
-        <div class="w-1/2">
-          <span class="font-bold">&nbsp<%= @course.holes %></span>
-        </div>
+      <div class="w-1/2 flex justify-center">
+        <span class="font-bold"><%= @course.holes %></span>&nbspholes
       </div>
-      <div class="w-1/2 flex">
-        <div class="w-1/2 text-right">
-          Rating&nbsp|
-        </div>
-        <div class="w-1/2">
-          <span class="font-bold">&nbsp<%= @course.rating %></span><span class="text-sm">/5</span>
-        </div>
+      <div class="w-1/2 flex justify-center">
+        rated<span class="font-bold">&nbsp<%= @course.rating %></span><span class="text-sm">/5</span>
       </div>
     </div>
     <div class="flex w-11/12">
-      <div class="w-1/2 flex">
-        <div class="w-1/2 text-right">
-          Tee 1 |
+      <% if @course.tee_1_clr != "" %>
+        <div class="w-1/2 flex">
+          <div class="w-1/2 text-right">
+            Tee 1 |
+          </div>
+          <div class="w-1/2 pl-1">
+            <div class="rounded-full h-6 w-6" style="background-color:#<%= @course.tee_1_clr %>"></div>
+          </div>
         </div>
-        <div class="w-1/2 pl-1">
-          <div class="rounded-full h-6 w-6" style="background-color:#<%= @course.tee_1_clr %>"></div>
-        </div>
-      </div>
+      <% end %>
+
+      <% if @course.tee_2_clr != "" %>
       <div class="w-1/2 flex">
         <div class="w-1/2 text-right">
           Tee 2 |
@@ -40,28 +34,36 @@
           <div class="rounded-full h-6 w-6" style="background-color:#<%= @course.tee_2_clr %>"></div>
         </div>
       </div>
+      <% end %>
     </div>
+
     <div class="flex w-11/12">
-      <div class="w-1/2 flex">
-        <div class="w-1/2 text-right">
-          Tee 3 |
+      <% if @course.tee_3_clr != "" %>
+        <div class="w-1/2 flex">
+          <div class="w-1/2 text-right">
+            Tee 3 |
+          </div>
+          <div class="w-1/2 pl-1">
+            <div class="rounded-full h-6 w-6" style="background-color:#<%= @course.tee_3_clr %>"></div>
+          </div>
         </div>
-        <div class="w-1/2 pl-1">
-          <div class="rounded-full h-6 w-6" style="background-color:#<%= @course.tee_3_clr %>"></div>
+      <% end %>
+      <% if @course.tee_4_clr != "" %>
+        <div class="w-1/2 flex">
+          <div class="w-1/2 text-right">
+            Tee 4 |
+          </div>
+          <div class="w-1/2 pl-1">
+            <div class="rounded-full h-6 w-6" style="background-color:#<%= @course.tee_4_clr %>"></div>
+          </div>
         </div>
-      </div>
-      <div class="w-1/2 flex">
-        <div class="w-1/2 text-right">
-          Tee 4 |
-        </div>
-        <div class="w-1/2 pl-1">
-          <div class="rounded-full h-6 w-6" style="background-color:#<%= @course.tee_4_clr %>"></div>
-        </div>
-      </div>
+        <% end %>
     </div>
   </div>
 <div class="glass-box w-full p-4 my-2 w-11/12">
-  <%= link_to 'Courses', courses_path, class: "btn-blue" %>
+  <%= link_to 'Back', 'javascript:history.back()', class: "btn-blue" %>
 </div>
-
+<div>
+  <%= crse_info(@course.course_id) %>
+</div>
 </div>

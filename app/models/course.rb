@@ -7,7 +7,7 @@ class Course < ApplicationRecord
 	has_many :coursekeys
 	has_many :cards
 
-	after_create :get_hole_info
+	after_create :get_hole_info, :check_colors
 
 	def layoutlength(tee)
 		if tee == 1
@@ -58,7 +58,42 @@ class Course < ApplicationRecord
 	def get_hole_info
 		info = hole_info(self.course_id)
 		info.shift()
+		if info.count < 18 && info.count > 9
+			while info.count > 8
+				info.pop()
+			end
+			self.holes = 9
+			self.save
+		end
+		if info.count > 18
+			while info.count > 18
+				info.pop()
+			end
+			self.holes = 18
+			self.save
+		end
 		self.holepins.create!(info)
+	end
+
+	#this corrects for courses that have a blank tee color on file in the DGCR API
+	def check_colors
+		checker = self.holepins[0]
+
+		if checker.tee_1_len != 0 && self.tee_1_clr == ""
+			self.tee_1_clr = "FFFFFF"
+		end
+
+		if checker.tee_2_len != 0 && self.tee_2_clr == ""
+			self.tee_2_clr = "FFFFFF"
+		end
+
+		if checker.tee_3_len != 0 && self.tee_3_clr == ""
+			self.tee_3_clr = "FFFFFF"
+		end
+
+		if checker.tee_4_len != 0 && self.tee_4_clr == ""
+			self.tee_4_clr = "FFFFFF"
+		end
 	end
 
 	def hole_info(id)

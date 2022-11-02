@@ -9,7 +9,7 @@ module DgcrHelper
 		signature = Digest::MD5.hexdigest "#{ENV['DGCR_KEY']}#{ENV['DGCR_SEC']}crseinfo"
 		uri = URI("https://www.dgcoursereview.com/api_test/?key=#{ENV['DGCR_KEY']}&mode=crseinfo&id=#{id}&sig=#{signature}")
 		response = Net::HTTP.get(uri)
-		JSON.parse(response, object_class: Course)
+		JSON.parse(response)
 	end
 
 	def hole_info(id)
