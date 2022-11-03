@@ -1,5 +1,5 @@
 <div data-controller="scorecard" class="flex flex-col justify-between h-[82vh]">
-  <div class="hidden" data-scorecard-target="hiddenPars"><%= @pars %></div>
+  <div class="hidden" data-scorecard-target="hiddenPars"><%= @pars.join('') %></div>
   <div class="hidden" data-scorecard-target="hiddenLength"><%= @length %></div>
 
   <div class="flex flex-col items-center font-righteous font-bold text-4xl mt-4">

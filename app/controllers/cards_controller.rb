@@ -18,7 +18,7 @@ class CardsController < ApplicationController
     @card = Card.new
     @tee = params[:tee]
     @course = Course.find_by(course_id: params[:course_id])
-    @pars = @course.holepins.map { |item| item.attributes["tee_#{@tee}_par"] }
+    @pars = @course.holepins.map{ |item| item.attributes["tee_#{@tee}_par"] }
     @length = @course.holepins.count
     
   end
