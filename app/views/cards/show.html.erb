@@ -1,5 +1,5 @@
 <div data-controller="viewcard" class="flex flex-col justify-start h-[82vh] w-11/12 sm:w-5/6 font-bold font-righteous">
-  <div class="hidden font-raleway text-xl" data-viewcard-target="hiddenPars"><%= @pars %></div>
+  <div class="hidden font-raleway text-xl" data-viewcard-target="hiddenPars"><%= @pars.join('') %></div>
   <div class="hidden font-raleway text-xl" data-viewcard-target="hiddenShots"><%= @card.shots %></div>
   <div class="hidden font-raleway text-xl" data-viewcard-target="hiddenLength"><%= @card.length %></div>
   <div class="hidden font-raleway text-xl" data-viewcard-target="testDisplay"></div>

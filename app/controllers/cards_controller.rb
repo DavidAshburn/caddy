@@ -10,7 +10,7 @@ class CardsController < ApplicationController
   # GET /cards/1 or /cards/1.json
   def show
     @course = Course.find_by(id: @card.course_id)
-    @pars = @course.holepins.map { |item| item.attributes["tee_#{params[:tee]}_par"] }
+    @pars = @course.holepins.map { |item| item.attributes["tee_#{@card.tee}_par"] }
   end
 
   # GET /cards/new
