@@ -16,10 +16,11 @@ class CardsController < ApplicationController
   # GET /cards/new
   def new
     @card = Card.new
-    @course = Course.find_by(id: @variant.course_id)
-    @pars = @course.holepins.map { |item| item.attributes["tee_#{params[:tee]}_par"] }
-    @length = @course.holepins.count
     @tee = params[:tee]
+    @course = Course.find_by(course_id: params[:course_id])
+    @pars = @course.holepins.map { |item| item.attributes["tee_#{@tee}_par"] }
+    @length = @course.holepins.count
+    
   end
 
   # POST /cards or /cards.json
