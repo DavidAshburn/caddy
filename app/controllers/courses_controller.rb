@@ -46,6 +46,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1 or /courses/1.json
   def show
+    @cards = current_user.cards.select { |card| card.course_id == @course.id }
   end
 
   # GET /courses/new

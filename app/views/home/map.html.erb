@@ -1,0 +1,19 @@
+<div data-controller="map">
+  <div class="flex flex-col items-center"> 
+    <div class="flex flex-row w-full justify-center">
+      <h1 class="font-bold sm:text-8xl text-6xl font-righteous text-zinc-800">Map</h1>
+    </div>
+  </div>
+
+  <div class="flex justify-evenly items-center h-[3rem] bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-lg border border-gray-200 mt-8">
+    <div class="font-bold font-righteous text-lg max-w-[50%] text-center" data-map-target="latitude"></div>
+    <div class="font-raleway max-w-[35%] text-center" data-map-target="longitude"></div>
+  </div>
+
+  <div class="flex w-full justify-center">
+    <div id="map" class="w-[80vw] h-[80vh]"></div>
+  </div>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GMAPS_API'] %>&callback=initMap" defer>
+  </script>
+</div>

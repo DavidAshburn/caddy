@@ -9,6 +9,7 @@ class Course < ApplicationRecord
 
 	after_create :get_hole_info, :check_colors
 
+	#access wrapper
 	def layoutlength(tee)
 		if tee == 1
 			self.holepins.reduce(0) do |sum, hole|
@@ -31,6 +32,7 @@ class Course < ApplicationRecord
 		end
 	end
 
+	#access wrapper
 	def layoutpar(tee)
 		if tee == 1
 			self.holepins.reduce(0) do |sum, hole|
@@ -55,6 +57,7 @@ class Course < ApplicationRecord
 
 	private
 
+	#holepin generation, corrects for hole info errors
 	def get_hole_info
 		info = hole_info(self.course_id)
 		info.shift()
@@ -96,6 +99,7 @@ class Course < ApplicationRecord
 		end
 	end
 
+	#api access wrapper
 	def hole_info(id)
 		signature = Digest::MD5.hexdigest "#{ENV['DGCR_KEY']}#{ENV['DGCR_SEC']}holeinfo"
 		uri = URI("https://www.dgcoursereview.com/api_test/?key=#{ENV['DGCR_KEY']}&mode=holeinfo&id=#{id}&sig=#{signature}")
