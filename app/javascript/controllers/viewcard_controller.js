@@ -162,13 +162,13 @@ export default class extends Controller {
 
     if(score > par) {
       this.overUnderTarget.innerText = `+${score - par}`;
-      this.overUnderTarget.classList.add("text-yellow-600");
+      this.overUnderTarget.classList.add("text-rose-400");
     } else if(score < par) {
       this.overUnderTarget.innerText = `-${par - score}`;
-      this.overUnderTarget.classList.add("text-green-600");
+      this.overUnderTarget.classList.add("text-teal-400");
     } else {
       this.overUnderTarget.innerText = '0';
-      this.overUnderTarget.classList.add("text-sky-600");
+      this.overUnderTarget.classList.add("text-sky-400");
     }
 
   }
@@ -205,17 +205,17 @@ export default class extends Controller {
       let score = parseInt(scorecard[i].innerText);
       
       if(score > this.parray[i]) {
-        scorecard[i].classList.toggle("text-amber-600", true);
-        scorecard[i].classList.toggle("text-green-600", false);
-        scorecard[i].classList.toggle("text-sky-600", false);
+        scorecard[i].classList.toggle("text-rose-400", true);
+        scorecard[i].classList.toggle("text-sky-400", false);
+        scorecard[i].classList.toggle("text-teal-400", false);
       } else if(score == this.parray[i]) {
-        scorecard[i].classList.toggle("text-amber-600", false);
-        scorecard[i].classList.toggle("text-green-600", true);
-        scorecard[i].classList.toggle("text-sky-600", false);
+        scorecard[i].classList.toggle("text-rose-400", false);
+        scorecard[i].classList.toggle("text-sky-400", true);
+        scorecard[i].classList.toggle("text-teal-400", false);
       } else if(score != 0) {
-        scorecard[i].classList.toggle("text-amber-600", false);
-        scorecard[i].classList.toggle("text-green-600", false);
-        scorecard[i].classList.toggle("text-sky-600", true);
+        scorecard[i].classList.toggle("text-rose-400", false);
+        scorecard[i].classList.toggle("text-sky-400", false);
+        scorecard[i].classList.toggle("text-teal-400", true);
       }
 
       scorecard[i].innerText = this.scores[i]; 
