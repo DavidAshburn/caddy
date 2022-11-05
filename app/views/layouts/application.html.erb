@@ -8,11 +8,11 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GMAPS_API']}" %>
     <%= javascript_importmap_tags %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GMAPS_API']}&callback=initMap", async: true, defer: true, 
-        "data-turbolinks-eval": false %>
 
-    <link href="https://fonts.googleapis.com/css2?&family=Monoton&family=Raleway:wght@300;400;600;700&family=Righteous&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?&family=Monoton&family=Raleway:wght@300;400;600;700&family=Righteous&display=swap" rel="stylesheet">
+    <%= yield(:head_tags) %>
   </head>
   
   <% if notice %>

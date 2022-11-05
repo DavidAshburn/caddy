@@ -1,12 +1,29 @@
+<% provide :head_tags do %>
+    <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        initMap(<%=@course.latitude%>, <%=@course.longitude%>)
+    });
+    function initMap(lat, lng) {
+      var myCoords = new google.maps.LatLng(lat, lng);
+      var mapOptions = {
+        center: myCoords,
+        zoom: 16
+      };
+      var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+      var marker = new google.maps.Marker ({
+        position: myCoords,
+        map: map
+      })
+    }
+    </script>
+<% end %>
 <div class="flex flex-col items-center w-full"> 
   <div class="flex flex-row px-6 justify-center">
     <h2 class="font-bold sm:text-8xl text-4xl font-righteous text-zinc-800 pt-4"><%= @course.name %></h2>
   </div>
   <h3 class="font-bold sm:text-4xl text-2xl font-righteous text-zinc-800 pb-4"><%= @course.city %>,&nbsp<%= @course.state %></h3>
 
-  <div class="hidden"><%= @course.longitude %></div>
-  <div class="hidden"><%= @course.latitude %></div>
-  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@course.latitude},#{@course.longitude}&key=#{ENV["GMAPS_API"]}", alt: "Map", class:"mb-4 w-5/6 rounded-lg max-w-[600px]" %>
+  <div id="map" class="w-[400px] h-[300px] mb-4"></div>
 
   <div class="gray-box w-5/6 flex flex-col p-2 gap-1 items-center">
     <div class="flex w-11/12">
