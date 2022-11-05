@@ -5,4 +5,8 @@ class HomeController < ApplicationController
   def discbag
     @discbag = current_user.discs
   end
+
+  def courses
+    @courses = current_user.courses
+  end
 end
