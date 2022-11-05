@@ -55,7 +55,7 @@ export default class extends Controller {
 
   //in: this.shots, char to look for
   //out: array of characters which immediately follow each instance of 'char'
-  //? why doesn't this work on 0 ? 
+  //char '0' -> output 0
   next_char(list, char) {
     if(char != '0') {
       let out = [];
