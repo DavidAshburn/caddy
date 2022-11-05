@@ -54,7 +54,8 @@ export default class extends Controller {
   }
 
   //in: this.shots, char to look for
-  //out: array of characters which immediately follow 'char'
+  //out: array of characters which immediately follow each instance of 'char'
+  //? why doesn't this work on 0 ? 
   next_char(list, char) {
     if(char != '0') {
       let out = [];
@@ -68,7 +69,7 @@ export default class extends Controller {
     return 0;
   }
 
-  acecheck(index) { //handle ace, recursive for repeats in PDGA play
+  acecheck(index) { //handle ace, recursive call handles repeats
     if(this.shots[index+2] == '0') {
       this.scores.push(1);
       index += 2;
@@ -176,22 +177,17 @@ export default class extends Controller {
     let shot_counter = 0;
     for(let i = 0; i < this.shots.length; i++) {
       shot_counter++;
-      
-      switch(this.shots[i]) {
-        case '0': //basket shot
-          shot_counter--; //correction for putt codes before each 0
+      if(this.shots[i] == '0') {
+        shot_counter--; //correction for putt codes
           this.scores.push(shot_counter);
           shot_counter = 0;
           
           //handle ace, recursive for repeats
           i = this.acecheck(i);
-
-          break;
-        case '5': //penalty shot
-          shot_counter++;
-          break;
-        default:
-          break;
+      }
+      if(this.shots[i] == '5') {
+        //penalty shot
+        shot_counter++;
       }
     }
   }

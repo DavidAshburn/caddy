@@ -93,6 +93,7 @@
     <%= form.hidden_field :shots, data: { scorecard_target: "hiddenShots"} %>
     <%= form.hidden_field :score, data: { scorecard_target: "hiddenScore"} %>
     <%= form.hidden_field :tee, value: @tee %>
+    <%= form.hidden_field :pars, value: @pars.join('') %>
     <%= form.hidden_field :course_id, value: @course.id %>
     <%= form.hidden_field :user_id, value: current_user.id %>
 

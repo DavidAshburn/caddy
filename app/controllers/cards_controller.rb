@@ -1,3 +1,5 @@
+require 'json'
+
 class CardsController < ApplicationController
   before_action :set_card, only: %i[ show update destroy ]
 
@@ -10,7 +12,7 @@ class CardsController < ApplicationController
   # GET /cards/1 or /cards/1.json
   def show
     @course = Course.find_by(id: @card.course_id)
-    @pars = @course.holepins.map { |item| item.attributes["tee_#{@card.tee}_par"] }
+    @pars = @card.pars.split('')
   end
 
   # GET /cards/new
@@ -20,7 +22,6 @@ class CardsController < ApplicationController
     @course = Course.find_by(course_id: params[:course_id])
     @pars = @course.holepins.map{ |item| item.attributes["tee_#{@tee}_par"] }
     @length = @course.holepins.count
-    
   end
 
   # POST /cards or /cards.json
@@ -35,8 +36,7 @@ class CardsController < ApplicationController
         @notplayed = true;
 
         current_user.coursekeys.each do |key|
-          if key.pointer = @card.course_id
-            key.count = key.count + 1
+          if key.course_id = @card.course_id
             @notplayed = false
           end
         end
@@ -84,6 +84,6 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.require(:card).permit(:score, :shots, :length, :user_id, :course_id, :tee, :count, :pointer)
+      params.require(:card).permit(:score, :shots, :pars, :length, :user_id, :course_id, :tee, :count, :pointer)
     end
 end

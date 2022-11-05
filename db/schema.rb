@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_31_205626) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_05_183812) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_31_205626) do
     t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "pars"
     t.index ["course_id"], name: "index_cards_on_course_id"
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
