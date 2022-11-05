@@ -25,11 +25,13 @@ export default class extends Controller {
     "penaltyShots",
     "coursePar",
     "cardScore",
-    "overUnder"
+    "overUnder",
+    "testDisplay"
   ]
 
   connect() {
     this.scores = [];
+    this.shotstring = this.hiddenShotsTarget.innerText
     this.shots = this.hiddenShotsTarget.innerText.split('');
     this.parray = this.hiddenParsTarget.innerText.split('');
     this.length = parseInt(this.hiddenLengthTarget.innerText);
@@ -53,22 +55,6 @@ export default class extends Controller {
     return counter;
   }
 
-  //in: this.shots, char to look for
-  //out: array of characters which immediately follow each instance of 'char'
-  //char '0' -> output 0
-  next_char(list, char) {
-    if(char != '0') {
-      let out = [];
-      list.forEach((element,index,array) => {
-        if(element == char) {
-            out.push(array[index+1]);
-        }
-      });
-      return out;
-    }
-    return 0;
-  }
-
   acecheck(index) { //handle ace, recursive call handles repeats
     if(this.shots[index+2] == '0') {
       this.scores.push(1);
@@ -78,32 +64,38 @@ export default class extends Controller {
     else return index;
   }
 
-  drive(array, match, target) { //percentages for different Drives substats, puts count(match)/length to target.innerText
-    if(array) {
-      target.innerText = `${((this.count(array, match)/parseFloat(this.length)) * 100).toFixed(0)}%`;
+  drive_regex(shot) {
+    return new RegExp(`^${shot}|0${shot}`, 'g')
+  }
+
+  drive(shot, target) { //percentages for different Drives substats, puts count(match)/length to target.innerText
+    let matches = this.shotstring.match(this.drive_regex(shot))
+    if (matches) {
+      target.innerText = `${((matches.length / this.length)*100).toFixed(0)}%`;
     }
     else
       target.innerText = "N/A";
   }
 
   drivingPercent() { // (length - (bad drives)) / length, drive() for substats
-    let driveArray = this.shots.filter((shot, index, shots) => index == 0 || shots[index-1] == 0); //gets 1st and after baskets
-    let drivePercent = (this.length - (this.count(driveArray, '5') + this.count(driveArray, '3'))) / this.length;
-    this.fairwayPercentageTarget.innerText = `${(drivePercent * 100).toFixed(0)}%`;
+    
+    let gooddrives = this.shotstring.match(/^[0,1,2,4]|0[0,1,2,4]/g).length;
+    this.fairwayPercentageTarget.innerText = `${((gooddrives / this.length)*100).toFixed(0)}%`;
 
-    this.drive(driveArray, '5', this.fairwayPTarget);
-    this.drive(driveArray, '4', this.fairway4Target);
-    this.drive(driveArray, '3', this.fairwayOTarget);
-    this.drive(driveArray, '2', this.fairway2Target);
-    this.drive(driveArray, '1', this.fairway1Target);
+    this.drive('5', this.fairwayPTarget);
+    this.drive('4', this.fairway4Target);
+    this.drive('3', this.fairwayOTarget);
+    this.drive('2', this.fairway2Target);
+    this.drive('1', this.fairway1Target);
   }
 
   circleOneXPercent() { // (made putts - tapins) / (all putts - tapins)
-    let followups = this.next_char(this.shots,'1');
+    this.testDisplayTarget.innerText = this.shotstring.match(/1./g);
+    let followups = this.shotstring.match(/1./g);
     if (followups) {
-      let tapins = this.count(followups, 'A');
-      let cOneB = this.count(followups, 'B');
-      let cOneC = this.count(followups,'C');
+      let tapins = this.count(followups, '1A');
+      let cOneB = this.count(followups, '1B');
+      let cOneC = this.count(followups,'1C');
       let cOnex = 0;
       let misses = followups.length - cOneC - cOneB - tapins;
 
@@ -129,11 +121,11 @@ export default class extends Controller {
   }
 
   circleTwoPercent() { // made putts from C2 / all putts from C2
-    let followups = this.next_char(this.shots,'2');
+    let followups = this.shotstring.match(/2./g);
     if (followups[0]) {
-      let cTwoA = this.count(followups, 'A');
-      let cTwoB = this.count(followups, 'B');
-      let cTwoC = this.count(followups, 'C');
+      let cTwoA = this.count(followups, '2A');
+      let cTwoB = this.count(followups, '2B');
+      let cTwoC = this.count(followups, '2C');
       let cTwo = cTwoA + cTwoB + cTwoC;
 
       let cTwoPerc = cTwo / parseFloat(this.count(this.shots, '2'));
@@ -152,8 +144,7 @@ export default class extends Controller {
   }
 
   penaltyShots() {
-    let penalties = this.count(this.shots, '5');
-    this.penaltyShotsTarget.innerText = penalties;
+    this.penaltyShotsTarget.innerText = this.shotstring.match(/5/g).length;
   }
 
   overUnder() {

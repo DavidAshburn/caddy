@@ -2,7 +2,6 @@
   <div class="hidden font-raleway text-xl" data-viewcard-target="hiddenPars"><%= @card.pars %></div>
   <div class="hidden font-raleway text-xl" data-viewcard-target="hiddenShots"><%= @card.shots %></div>
   <div class="hidden font-raleway text-xl" data-viewcard-target="hiddenLength"><%= @card.length %></div>
-  <div class="hidden font-raleway text-xl" data-viewcard-target="testDisplay"></div>
 
   <div class="flex flex-col items-center text-4xl mt-4 text-zinc-800">
     <div class="flex flex-row w-full justify-center">
@@ -11,6 +10,11 @@
     <div class="flex justify-center gap-4 w-4/5">
       <h3 class=" text-2xl"><%= @course.city %>,&nbsp<%= @course.state %></h3>
     </div>
+    <p class="text-sm">
+      <%= @card.shots.scan(/1[B,C]0/)  %>
+    </p>
+    <p class="text-sm" data-viewcard-target="testDisplay">
+    </p>
   </div>
 
   <div class="flex flex-col w-full mt-4 text-xl text-slate-800">

@@ -1,103 +1,97 @@
-<div id="<%= dom_id course %>" class="flex flex-col glass-box rounded-lg items-center gap-2 py-2 mb-4">
-  <div class="text-xl text-center py-2">
-    <%= course.name %>
-  </div>
-  <div class="flex gap-4 py-2 items-center">
-    <div class="text-right">
-      <%= course.city %>,&nbsp<%= course.state %>
+<%= link_to course, :action => 'go' do %>
+  <div id="<%= dom_id course %>" class="flex flex-col glass-box rounded-lg items-center gap-2 py-2 mb-4">
+    <div class="text-xl text-center py-2">
+      <%= course.name %>
     </div>
-  </div>
-  <div class="flex flex-wrap gap-4 py-2 items-center justify-center">
+    <div class="flex gap-4 py-2 items-center">
+      <div class="text-right">
+        <%= course.city %>,&nbsp<%= course.state %>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-4 py-2 items-center justify-center">
 
-    
-    <% if course.tee_1_clr != "" %>
-      <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_1_clr %>;">
-        <p class="rounded-full bg-green-50 px-1"> 
-          <% len = course.layoutlength(1) %>
-          <% if len > 0 %>
-            <%= len %>
-          <% else %>
-            <%= "?" %>
-          <% end %>
-        </p>
-        <p class="text-3xl rounded-full bg-white p-1"> 
-          <% par = course.layoutpar(1) %>
-          <% if par > 0 %>
-            <%= par %>
-          <% else %>
-            <%= 3 * course.holes.to_i %><span class="text-sm">*</span>
-          <% end %>
-        </p>
-      </div>
-    <% end %>
-    <% if course.tee_2_clr != "" %>
-      <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_2_clr %>;">
-        <p class="rounded-full bg-green-50 px-1"> 
-          <% len = course.layoutlength(2) %>
-          <% if len > 0 %>
-            <%= len %>
-          <% else %>
-            <%= "?" %>
-          <% end %>
-        </p>
-        <p class="text-3xl rounded-full bg-white p-1"> 
-          <% par = course.layoutpar(2) %>
-          <% if par > 0 %>
-            <%= par %>
-          <% else %>
-            <%= 3 * course.holes.to_i %><span class="text-sm">*</span>
-          <% end %>
-        </p>
-      </div>
-    <% end %>
-    <% if course.tee_3_clr != "" %>
-      <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_3_clr %>;">
-        <p class="rounded-full bg-green-50 px-1"> 
-          <% len = course.layoutlength(3) %>
-          <% if len > 0 %>
-            <%= len %>
-          <% else %>
-            <%= "?" %>
-          <% end %>
-        </p>
-        <p class="text-3xl rounded-full bg-white p-1"> 
-          <% par = course.layoutpar(3) %>
-          <% if par > 0 %>
-            <%= par %>
-          <% else %>
-            <%= 3 * course.holes.to_i %><span class="text-sm">*</span>
-          <% end %>
-        </p>
-      </div>
-    <% end %>
-    <% if course.tee_4_clr != "" %>
-      <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_4_clr %>;">
-        <p class="rounded-full bg-green-50 px-1"> 
-          <% len = course.layoutlength(4) %>
-          <% if len > 0 %>
-            <%= len %>
-          <% else %>
-            <%= "?" %>
-          <% end %>
-        </p>
-        <p class="text-3xl rounded-full bg-white p-1"> 
-          <% par = course.layoutpar(4) %>
-          <% if par > 0 %>
-            <%= par %>
-          <% else %>
-            <%= 3 * course.holes.to_i %><span class="text-sm">*</span>
-          <% end %>
-        </p>
-      </div>
-    <% end %>
+      
+      <% if course.tee_1_clr != "" %>
+        <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_1_clr %>;">
+          <p class="rounded-full bg-green-50 px-1"> 
+            <% len = course.layoutlength(1) %>
+            <% if len > 0 %>
+              <%= len %>
+            <% else %>
+              <%= "?" %>
+            <% end %>
+          </p>
+          <p class="text-3xl rounded-full bg-white p-1"> 
+            <% par = course.layoutpar(1) %>
+            <% if par > 0 %>
+              <%= par %>
+            <% else %>
+              <%= 3 * course.holes.to_i %><span class="text-sm">*</span>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+      <% if course.tee_2_clr != "" %>
+        <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_2_clr %>;">
+          <p class="rounded-full bg-green-50 px-1"> 
+            <% len = course.layoutlength(2) %>
+            <% if len > 0 %>
+              <%= len %>
+            <% else %>
+              <%= "?" %>
+            <% end %>
+          </p>
+          <p class="text-3xl rounded-full bg-white p-1"> 
+            <% par = course.layoutpar(2) %>
+            <% if par > 0 %>
+              <%= par %>
+            <% else %>
+              <%= 3 * course.holes.to_i %><span class="text-sm">*</span>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+      <% if course.tee_3_clr != "" %>
+        <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_3_clr %>;">
+          <p class="rounded-full bg-green-50 px-1"> 
+            <% len = course.layoutlength(3) %>
+            <% if len > 0 %>
+              <%= len %>
+            <% else %>
+              <%= "?" %>
+            <% end %>
+          </p>
+          <p class="text-3xl rounded-full bg-white p-1"> 
+            <% par = course.layoutpar(3) %>
+            <% if par > 0 %>
+              <%= par %>
+            <% else %>
+              <%= 3 * course.holes.to_i %><span class="text-sm">*</span>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+      <% if course.tee_4_clr != "" %>
+        <div class="flex flex-col gap-2 items-center p-4 rounded-lg" style="background-color: #<%= course.tee_4_clr %>;">
+          <p class="rounded-full bg-green-50 px-1"> 
+            <% len = course.layoutlength(4) %>
+            <% if len > 0 %>
+              <%= len %>
+            <% else %>
+              <%= "?" %>
+            <% end %>
+          </p>
+          <p class="text-3xl rounded-full bg-white p-1"> 
+            <% par = course.layoutpar(4) %>
+            <% if par > 0 %>
+              <%= par %>
+            <% else %>
+              <%= 3 * course.holes.to_i %><span class="text-sm">*</span>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
 
-  </div>
-  <div class="flex gap-4 py-2 items-center">
-    <p>
-      <%= link_to "Show", course, class:"btn-green" %>
-    </p>
-    <% if !current_user.courses.include? course %>
-      <%= turbo_frame_tag "new_coursekey", src: new_coursekey_path(:course_id => course.id), target:"_top" %>
-    <% end %>
-  </div>
-</div> 
+    </div>
+  </div> 
+<% end %>
