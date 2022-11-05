@@ -90,7 +90,6 @@ export default class extends Controller {
   }
 
   circleOneXPercent() { // (made putts - tapins) / (all putts - tapins)
-    this.testDisplayTarget.innerText = this.shotstring.match(/1./g);
     let followups = this.shotstring.match(/1./g);
     if (followups) {
       let tapins = this.count(followups, '1A');
@@ -144,7 +143,11 @@ export default class extends Controller {
   }
 
   penaltyShots() {
-    this.penaltyShotsTarget.innerText = this.shotstring.match(/5/g).length;
+    let penalties = this.shotstring.match(/5/g);
+    if(penalties)
+      this.penaltyShotsTarget.innerText = penalties.length;
+    else
+      this.penaltyShotsTarget.innerText = 0;
   }
 
   overUnder() {
