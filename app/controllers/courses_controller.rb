@@ -23,7 +23,7 @@ class CoursesController < ApplicationController
 
       #this helper returns an array of unsaved Course objects from the API
       #list = helpers.find_loc(city, state, country)
-      list = helpers.near_rad(@loc.latitude, @loc.longitude)
+      list = near_rad(@loc.latitude, @loc.longitude, 15)
 
       list.each do |course|
 
@@ -110,5 +110,17 @@ class CoursesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def course_params
       params.require(:course).permit(:course_id, :name, :holes, :city, :state, :country, :zipcode, :latitude, :longitude, :street_addr, :reviews, :rating, :private, :paytoplay, :tee_1, :tee_2, :tee_3, :tee_4, :dgcr_url, :rating_img, :rating_img_small, :photo_thumb, :photo_medium, :photo_cap, :photo_hole, :creator, :fcity, :fstate, :fcountry)
+    end
+
+    def near_rad(lat, lon, radius)
+      signature = Digest::MD5.hexdigest "#{ENV['DGCR_KEY']}#{ENV['DGCR_SEC']}near_rad"
+      uri = URI("https://www.dgcoursereview.com/api_test/?key=#{ENV['DGCR_KEY']}&mode=near_rad&lat=#{lat}&lon=#{lon}&limit=24&rad=#{radius}&sig=#{signature}")
+      response = Net::HTTP.get(uri)
+      list = JSON.parse(response)
+      courses = Array.new
+      list.each do |item|
+        courses.push(Course.new(item.except("distance")))
+      end
+      return courses
     end
 end
