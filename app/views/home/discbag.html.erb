@@ -5,7 +5,10 @@
     </div>
   </div>
 
-  <div id="discbag" class="flex flex-col glass-box rounded-[3rem] w-full h-[50vh] mt-6 py-2">
+  <div id="discbag" class="flex flex-col mx-2 mt-4 w-5/6 justify-center bg-gradient-to-b from-slate-400 to-slate-600 border-t border-l border-gray-200 inset-shadow rounded-lg">
     <%= render @discbag %>
+  </div>
+  <div class="flex justify-center items-center p-2 my-2 w-11/12">
+    <%= link_to 'Back', 'javascript:history.back()', class: "btn-blue" %>
   </div>
 </div>

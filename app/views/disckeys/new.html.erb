@@ -2,6 +2,6 @@
 	<%= form_with(model: @disckey, data: {controller: "reset", action: "turbo:submit-end->reset#remove"}) do |form| %>
 		<%= form.hidden_field :disc_id, value: params[:disc_id] %>
 		<%= form.hidden_field :user_id, value:current_user.id %>
-		<%= form.submit "Add", class: "btn-yellow" %>
+		<%= form.submit "Add to Bag", class: "btn-yellow" %>
 	<% end %>
 <% end %>
