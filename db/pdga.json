@@ -4538,7 +4538,7 @@
  { 
   "user_id": 0,
   "Maker": "Hero Disc",
-  "Model": "Hero Bullseye Putt &amp; Approach",
+  "Model": "Hero Bullseye Putt & Approach",
   "Weight": 175.1,
   "Diameter": 21.1,
   "Height": 1.8,
@@ -5644,7 +5644,7 @@
  { 
   "user_id": 0,
   "Maker": "XCOM Discs",
-  "Model": "XPT2 (Eden, Mid-Range, renamed from Dolphin)",
+  "Model": "XPT2 (Eden, Mid-Range, formerly Dolphin)",
   "Weight": 176.8,
   "Diameter": 21.3,
   "Height": 2,
@@ -5658,7 +5658,7 @@
  { 
   "user_id": 0,
   "Maker": "XCOM Discs",
-  "Model": "XPT3 (Griffon, Mid-Range, renamed from Grampus)",
+  "Model": "XPT3 (Griffon, Mid-Range, formerly Grampus)",
   "Weight": 179.3,
   "Diameter": 21.6,
   "Height": 1.9,
@@ -5672,7 +5672,7 @@
  { 
   "user_id": 0,
   "Maker": "XCOM Discs",
-  "Model": "XPT4 (Helios, Driver, renamed from Sailfish)",
+  "Model": "XPT4 (Helios, Driver, formerly Sailfish)",
   "Weight": 174.3,
   "Diameter": 21,
   "Height": 1.6,
@@ -5686,7 +5686,7 @@
  { 
   "user_id": 0,
   "Maker": "XCOM Discs",
-  "Model": "XPT5 (Zion, Driver, renamed from Volador)",
+  "Model": "XPT5 (Zion, Driver, formerly Volador)",
   "Weight": 177.6,
   "Diameter": 21.4,
   "Height": 1.7,
@@ -5700,7 +5700,7 @@
  { 
   "user_id": 0,
   "Maker": "XCOM Discs",
-  "Model": "XPT1 (Bennu, Putter, renamed from Globefish)",
+  "Model": "XPT1 (Bennu, Putter, formerly Globefish)",
   "Weight": 174.3,
   "Diameter": 21,
   "Height": 2.2,
@@ -9942,7 +9942,7 @@
  { 
   "user_id": 0,
   "Maker": "Discmania",
-  "Model": "P3x (Putt &amp; Approach)",
+  "Model": "P3x (Putt & Approach)",
   "Weight": 176,
   "Diameter": 21.2,
   "Height": 1.9,
@@ -11006,7 +11006,7 @@
  { 
   "user_id": 0,
   "Maker": "Tobu Discs",
-  "Model": "Power Roller (renamed from Kyng Roller)",
+  "Model": "Power Roller (formerly Kyng Roller)",
   "Weight": 175.1,
   "Diameter": 21.1,
   "Height": 1.4,
@@ -13162,7 +13162,7 @@
  { 
   "user_id": 0,
   "Maker": "Yikun Discs",
-  "Model": "Yao)",
+  "Model": "Yao",
   "Weight": 179.3,
   "Diameter": 21.6,
   "Height": 1.9,
@@ -13974,7 +13974,7 @@
  { 
   "user_id": 0,
   "Maker": "Discmania",
-  "Model": "P3 (Putt &amp; Approach)",
+  "Model": "P3 (Putt & Approach)",
   "Weight": 176,
   "Diameter": 21.2,
   "Height": 2,
@@ -15906,7 +15906,7 @@
  { 
   "user_id": 0,
   "Maker": "DKG Disc Sports",
-  "Model": "Wing &amp; A Prayer",
+  "Model": "Wing & A Prayer",
   "Weight": 174.3,
   "Diameter": 21,
   "Height": 2.2,
@@ -17208,7 +17208,7 @@
  { 
   "user_id": 0,
   "Maker": "Discmania",
-  "Model": "P1 (Maniac, Putt &amp; Approach)",
+  "Model": "P1 (Maniac, Putt & Approach)",
   "Weight": 176,
   "Diameter": 21.2,
   "Height": 2,
@@ -17894,7 +17894,7 @@
  { 
   "user_id": 0,
   "Maker": "Quest Applied Technologies",
-  "Model": "Odyssey Approach &amp; Putter",
+  "Model": "Odyssey Approach & Putter",
   "Weight": 178.5,
   "Diameter": 21.5,
   "Height": 2.3,
@@ -18776,7 +18776,7 @@
  { 
   "user_id": 0,
   "Maker": "Aerobie",
-  "Model": "Arrow - Approach &amp; Putter",
+  "Model": "Arrow - Approach & Putter",
   "Weight": 177.6,
   "Diameter": 21.4,
   "Height": 1.8,
@@ -22008,7 +22008,7 @@
  { 
   "user_id": 0,
   "Maker": "Disc Golf Association",
-  "Model": "Midnight Flyer (FB 6, FB 19 &amp; FB 20 molds)",
+  "Model": "Midnight Flyer (FB 6, FB 19 & FB 20 molds)",
   "Weight": 196.7,
   "Diameter": 23.7,
   "Height": 2.8,
@@ -22064,7 +22064,7 @@
  { 
   "user_id": 0,
   "Maker": "Disc Golf Association",
-  "Model": "Midnight Flyer (70C, 71C &amp; 71C* molds)",
+  "Model": "Midnight Flyer (70C, 71C & 71C* molds)",
   "Weight": 186.8,
   "Diameter": 22.5,
   "Height": 3,
@@ -22078,7 +22078,7 @@
  { 
   "user_id": 0,
   "Maker": "Disc Golf Association",
-  "Model": "Midnight Flyer (80, 80C &amp; 80E molds)",
+  "Model": "Midnight Flyer (80, 80C & 80E molds)",
   "Weight": 200,
   "Diameter": 26.9,
   "Height": 3.1,
@@ -22106,7 +22106,7 @@
  { 
   "user_id": 0,
   "Maker": "Wham-O, Inc.",
-  "Model": "Olympic\/Collegiate (100, 100A, 100D, 100E &amp; 100AD molds)",
+  "Model": "Olympic\/Collegiate (100, 100A, 100D, 100E & 100AD molds)",
   "Weight": 200,
   "Diameter": 24.9,
   "Height": 2.8,
@@ -22148,7 +22148,7 @@
  { 
   "user_id": 0,
   "Maker": "Wham-O, Inc.",
-  "Model": "97g (70, 70C, 71 &amp; 71C* molds)",
+  "Model": "97g (70, 70C, 71 & 71C* molds)",
   "Weight": 186.8,
   "Diameter": 22.5,
   "Height": 3,
@@ -22190,7 +22190,7 @@
  { 
   "user_id": 0,
   "Maker": "Disc Golf Association",
-  "Model": "Midnight Flyer (100, 100A, 100AD, 100D, 100E, 100AD &amp; 100E molds)",
+  "Model": "Midnight Flyer (100, 100A, 100AD, 100D, 100E, 100AD & 100E molds)",
   "Weight": 200,
   "Diameter": 24.9,
   "Height": 2.8,
@@ -22204,7 +22204,7 @@
  { 
   "user_id": 0,
   "Maker": "Disc Golf Association",
-  "Model": "Midnight Flyer (40, 40A, 40G, 40G*, 41, 41F, 41G, 42AF, 42AG, 42BF &amp; 42BG molds)",
+  "Model": "Midnight Flyer (40, 40A, 40G, 40G*, 41, 41F, 41G, 42AF, 42AG, 42BF & 42BG molds)",
   "Weight": 195.1,
   "Diameter": 23.5,
   "Height": 2.6,
@@ -22218,7 +22218,7 @@
  { 
   "user_id": 0,
   "Maker": "Disc Golf Association",
-  "Model": "Midnight Flyer (50, 50E &amp; 50G molds)",
+  "Model": "Midnight Flyer (50, 50E & 50G molds)",
   "Weight": 200,
   "Diameter": 25.9,
   "Height": 2.8,
@@ -22232,7 +22232,7 @@
  { 
   "user_id": 0,
   "Maker": "Wham-O, Inc.",
-  "Model": "119 G (40, 40G, 40G*, 41, 41 F, 41G, 42AF, 42AG, 42BF, 42BG &amp; 40F molds)",
+  "Model": "119 G (40, 40G, 40G*, 41, 41 F, 41G, 42AF, 42AG, 42BF, 42BG & 40F molds)",
   "Weight": 195.1,
   "Diameter": 23.5,
   "Height": 2.6,
@@ -22246,7 +22246,7 @@
  { 
   "user_id": 0,
   "Maker": "Wham-O, Inc.",
-  "Model": "141 G (50, 50E, 50G, 51, 52AE, 52BE, 52AG, 52BG &amp; Farusa 5 molds)",
+  "Model": "141 G (50, 50E, 50G, 51, 52AE, 52BE, 52AG, 52BG & Farusa 5 molds)",
   "Weight": 200,
   "Diameter": 25.9,
   "Height": 2.8,
@@ -22260,7 +22260,7 @@
  { 
   "user_id": 0,
   "Maker": "Wham-O, Inc.",
-  "Model": "165g (80, 81, 81C, 81E, 82E &amp; 900 molds &amp; High Rigidity)",
+  "Model": "165g (80, 81, 81C, 81E, 82E & 900 molds & High Rigidity)",
   "Weight": 200,
   "Diameter": 26.9,
   "Height": 3.1,
@@ -22274,7 +22274,7 @@
  { 
   "user_id": 0,
   "Maker": "Wham-O, Inc.",
-  "Model": "Super Pro (no #, 50, 60, 61, 61N, 61B, 62, 62N, 63A P, 63B P &amp; 63 P molds)",
+  "Model": "Super Pro (no #, 50, 60, 61, 61N, 61B, 62, 62N, 63A P, 63B P & 63 P molds)",
   "Weight": 200,
   "Diameter": 25.5,
   "Height": 2.8,
@@ -22316,7 +22316,7 @@
  { 
   "user_id": 0,
   "Maker": "Wham-O, Inc.",
-  "Model": "Professional (1, 4, 10, 14, 15, 16, 17, 20, 20 A, 21, 23A, 23B, 24A, 24B &amp; Pro Classic molds)",
+  "Model": "Professional (1, 4, 10, 14, 15, 16, 17, 20, 20 A, 21, 23A, 23B, 24A, 24B & Pro Classic molds)",
   "Weight": 198.4,
   "Diameter": 23.9,
   "Height": 3,
