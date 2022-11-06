@@ -1,10 +1,10 @@
-<div data-controller="scorecard" class="flex flex-col justify-between h-[82vh]">
+<div data-controller="scorecard" class="flex flex-col justify-between h-[82vh] w-11/12">
   <div class="hidden" data-scorecard-target="hiddenPars"><%= @pars.join('') %></div>
   <div class="hidden" data-scorecard-target="hiddenLength"><%= @length %></div>
 
   <div class="flex flex-col items-center font-righteous font-bold text-4xl mt-4">
     <div class="flex flex-row w-full justify-center text-center p-4">
-      <h2 class="text-6xl text-white"><%= @course.name %></h2>
+      <h2 class="text-4xl text-white"><%= @course.name %></h2>
     </div>
     <div class="flex flex-col items-center gap-4 w-4/5 sm:text-4xl text-2xl">
       <h3 class="text-slate-200">~&nbsp<%= @course.city %>,&nbsp<%= @course.state %>&nbsp~</h3>
@@ -57,7 +57,7 @@
     <% end %>    
   </div>
   <div class="flex justify-center mt-4 font-righteous">
-    <div class="glass-box flex flex-col justify-center items-center text-4xl text-white text-center h-80 w-11/12">
+    <div class="glass-box flex flex-col justify-center items-center text-4xl text-white text-center w-11/12">
       <div class="flex justify-evenly align-center gap-4">
         <button class="glass-button min-h-[3rem] min-w-[3rem] my-6" data-action="scorecard#undoShot">-</button>
         <div class="flex flex-col w-1/3 items-center mt-1">
@@ -66,7 +66,7 @@
         </div>
         <button class="glass-button min-h-[3rem] min-w-[3rem] my-6" data-action="scorecard#openShotModal">+</button>
       </div>
-      <div class="glass-button flex justify-center gap-2 w-11/12 h-40" data-scorecard-target="shotIcons"></div>
+      <div class="glass-button flex justify-center gap-2 w-11/12 h-12" data-scorecard-target="shotIcons"></div>
       <div class="flex justify-evenly align-center gap-4">
         <button class="glass-button min-h-[4rem] min-w-[4rem] pr-1 my-6" data-action="scorecard#lastHole"><</button>
         <div class="flex flex-col w-1/3 items-center mt-1">
