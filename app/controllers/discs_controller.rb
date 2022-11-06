@@ -24,7 +24,7 @@ class DiscsController < ApplicationController
       if @mak
         @discs = Disc.where("LOWER(maker) LIKE ?", "%" + @mak + "%").order('maker, model')
       else
-        @discs = Disc.find_by(model: "Zone")
+        @discs = @discbag
       end
     end
   end
