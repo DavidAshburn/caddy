@@ -1,19 +1,60 @@
-<div data-controller="map">
-  <div class="flex flex-col items-center"> 
-    <div class="flex flex-row w-full justify-center">
-      <h1 class="font-bold sm:text-8xl text-6xl font-righteous text-zinc-800">Map</h1>
-    </div>
-  </div>
+<% provide :head_tags do %>
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){ initMap() });
+      
+  function initMap() {
+    let map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 37.7749, lng: -122.4194 },
+      zoom: 10,
+    });
+    let infoWindow = new google.maps.InfoWindow();
 
-  <div class="flex justify-evenly items-center h-[3rem] bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-lg border border-gray-200 mt-8">
-    <div class="font-bold font-righteous text-lg max-w-[50%] text-center" data-map-target="latitude"></div>
-    <div class="font-raleway max-w-[35%] text-center" data-map-target="longitude"></div>
-  </div>
+    const locationButton = document.createElement("button");
 
-  <div class="flex w-full justify-center">
-    <div id="map" class="w-[80vw] h-[80vh]"></div>
-  </div>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GMAPS_API'] %>&callback=initMap" defer>
+    locationButton.textContent = "Find Me";
+    locationButton.classList.add("btn-green", "text-lg", "mt-2");
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    locationButton.addEventListener("click", () => {
+      // Try HTML5 geolocation.
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent("Location found.");
+            infoWindow.open(map);
+            map.setCenter(pos);
+            map.setZoom(19);
+            map.setTilt(0);
+            map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+          },
+          () => {
+            handleLocationError(true, infoWindow, map.getCenter());
+          }
+        );
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+    });
+  }
+
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(
+      browserHasGeolocation
+        ? "Error: The Geolocation service failed."
+        : "Error: Your browser doesn't support geolocation."
+    );
+    infoWindow.open(map);
+  }
+
+  window.initMap = initMap;
+
   </script>
-</div>
+<% end %>
+<div id="map" class="w-[98vw] h-[85vh] my-4 rounded-lg"></div>

@@ -9,4 +9,7 @@ class HomeController < ApplicationController
   def courses
     @courses = current_user.courses
   end
+
+  def map
+  end
 end

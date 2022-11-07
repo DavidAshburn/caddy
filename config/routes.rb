@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'home/discbag'
   get 'home/courses'
   get 'home/stats'
+  get 'home/map'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

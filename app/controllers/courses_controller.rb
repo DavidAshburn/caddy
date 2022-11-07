@@ -18,26 +18,17 @@ class CoursesController < ApplicationController
     
     if(city && state && country)
       @courses = Array.new
-
       @loc = Location.create(address: "#{city},#{state},#{country}")
-
-      #this helper returns an array of unsaved Course objects from the API
-      #list = helpers.find_loc(city, state, country)
       list = near_rad(@loc.latitude, @loc.longitude, 15)
-
       list.each do |course|
-
         #we'll save them to the database if they don't already exist
         if !Course.find_by(course_id: course.course_id)
           if !course.save 
             format.html { render courses, status: :unprocessable_entity }
           end
         end
-
-        #we pull our instance variable from our db, not the JSON
         @courses.push(Course.find_by(course_id: course.course_id))
       end
-
       @loc.destroy
     else
       @courses = current_user.courses

@@ -15,7 +15,7 @@
       <button class="flex text-xl my-2 ml-2 hover:text-cyan-600" data-action="navbar#showDropAlt navbar#hideDrop">Stay In</button>
         <div class="bg-slate-100 z-20 shadow-small min-w-[180px] hidden absolute rounded-b-xl right-5 py-2" data-navbar-target="altdrop">
           <%# link_to "My Profile", home_profile_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
-          <%# link_to "Map Stub", home_map_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
+          <%= link_to "Map Stub", home_map_path, class:"flex ml-2 my-2 hover:text-cyan-600", target:"_top"%>
           <%= link_to "Discbag", home_discbag_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
           <%= link_to "Discs", discs_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
           <%= link_to "Cards", cards_path, class:"flex ml-2 my-2 hover:text-cyan-600" %>
@@ -25,7 +25,7 @@
     </div>
     <div class="flex justify-end items-center">
       <%# link_to "Profile", home_profile_path, class:"px-2.5 py-2 hover:text-cyan-600 hidden sm:flex"%>
-      <%# link_to "Map Stub", home_map_path, class:"px-2.5 py-2 hover:text-cyan-600 hidden sm:flex"%>
+      <%= link_to "Map Stub", home_map_path, class:"px-2.5 py-2 hover:text-cyan-600 hidden sm:flex", target:"_top"%>
       <%= link_to "Discbag", home_discbag_path, class:"px-2.5 py-2 hover:text-cyan-600 hidden sm:flex"%>
       <%= link_to "Discs", discs_path, class:"px-2.5 py-2 hover:text-cyan-600 hidden sm:flex"%>
       <%= link_to "Cards", cards_path, class:"flex hover:text-cyan-600 hidden sm:flex" %>
