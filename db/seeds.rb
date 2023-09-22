@@ -2,6 +2,12 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 
+Disc.destroy_all
+User.destroy_all
+Course.destroy_all
+Card.destroy_all
+Coursekey.destroy_all
+
 all_discs = JSON.parse(File.read(Rails.root.join('db/pdga.json')))
 
 all_discs.each do |disc|
@@ -22,9 +28,9 @@ all_discs.each do |disc|
 end
 
 User.create(
-	email:"disc@golf.com",
-	password: "discgolf",
-	password_confirmation: "discgolf"
+	email:"demo@user.com",
+	password: "password",
+	password_confirmation: "password"
 	)
 
 Course.create(
